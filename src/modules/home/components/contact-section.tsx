@@ -1,96 +1,83 @@
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter, ArrowRight } from "lucide-react";
-import { Button } from "@/shared/components/ui/button";
-import { Card } from "@/shared/components/ui/card";
-import { Badge } from "@/shared/components/ui/badge";
+import { Mail, Phone, MapPin, Github, Linkedin, Twitter } from "lucide-react";
+import { SlideInOnScroll } from "@/shared/components/slideInOnScroll";
 
 export function ContactSection() {
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-black">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-16">
-          <Badge className="mb-4 bg-zinc-800 text-zinc-300 border-zinc-700">Get In Touch</Badge>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">Let's Work Together</h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Have a project in mind? Let's connect and make it happen.
-          </p>
+    <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-black">
+      <div className="max-w-2xl mx-auto">
+
+        {/* Heading */}
+        <SlideInOnScroll direction="up" duration={700}>
+          <h2 className="text-3xl font-bold text-white mb-12 text-center">Get In Touch</h2>
+        </SlideInOnScroll>
+
+        {/* Two columns: Direct & Social */}
+        <div className="lg:ml-[10%] grid sm:grid-cols-2 gap-45">
+
+          {/* Direct */}
+          <SlideInOnScroll direction="left" duration={700} delay={150}>
+            <div>
+              <p className="text-xs uppercase tracking-widest text-white mb-4">Direct</p>
+              <div className="space-y-4">
+                <a
+                  href="mailto:voquoclinh.29042006@gmail.com"
+                  className="flex items-center gap-3 text-zinc-400 hover:text-white transition-colors group"
+                >
+                  <Mail className="w-4 h-4 text-zinc-600 group-hover:text-white shrink-0 transition-colors" />
+                  <span className="text-sm">voquoclinh.29042006@gmail.com</span>
+                </a>
+                <a
+                  href="tel:+84398695132"
+                  className="flex items-center gap-3 text-zinc-400 hover:text-white transition-colors group"
+                >
+                  <Phone className="w-4 h-4 text-zinc-600 group-hover:text-white shrink-0 transition-colors" />
+                  <span className="text-sm">(+84) 398 695 132</span>
+                </a>
+                <div className="flex items-center gap-3 text-zinc-400">
+                  <MapPin className="w-4 h-4 text-zinc-600 shrink-0" />
+                  <span className="text-sm">Ho Chi Minh City, Vietnam</span>
+                </div>
+              </div>
+            </div>
+          </SlideInOnScroll>
+
+          {/* Social */}
+          <SlideInOnScroll direction="right" duration={700} delay={250}>
+            <div>
+              <p className="text-xs uppercase tracking-widest text-white mb-4">Social</p>
+              <div className="space-y-4">
+                <a
+                  href="https://github.com/vquclinh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-zinc-400 hover:text-white transition-colors group"
+                >
+                  <Github className="w-4 h-4 text-zinc-600 group-hover:text-white shrink-0 transition-colors" />
+                  <span className="text-sm">Vo Quoc Linh</span>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/linh-v%C3%B5-qu%E1%BB%91c-0132a232a/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-zinc-400 hover:text-white transition-colors group"
+                >
+                  <Linkedin className="w-4 h-4 text-zinc-600 group-hover:text-white shrink-0 transition-colors" />
+                  <span className="text-sm">Vo Quoc Linh</span>
+                </a>
+                <a
+                  href="https://twitter.com/voquoclinh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-zinc-400 hover:text-white transition-colors group"
+                >
+                  <Twitter className="w-4 h-4 text-zinc-600 group-hover:text-white shrink-0 transition-colors" />
+                  <span className="text-sm">Vo Quoc Linh</span>
+                </a>
+              </div>
+            </div>
+          </SlideInOnScroll>
+
         </div>
-
-        <Card className="p-8 md:p-12 bg-gradient-to-br from-zinc-800/50 to-zinc-900/50 border-zinc-700/30 backdrop-blur-xl">
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Contact Info */}
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-zinc-500 to-zinc-700 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-white mb-1">Email</h3>
-                  <a href="mailto:alex.morgan@example.com" className="text-zinc-400 hover:text-zinc-300 transition-colors">
-                    alex.morgan@example.com
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-zinc-500 to-zinc-700 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Phone className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-white mb-1">Phone</h3>
-                  <a href="tel:+1234567890" className="text-zinc-400 hover:text-zinc-300 transition-colors">
-                    +1 (234) 567-8900
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-zinc-500 to-zinc-700 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-white mb-1">Location</h3>
-                  <p className="text-zinc-400">San Francisco, CA</p>
-                </div>
-              </div>
-
-              {/* Social Links */}
-              <div className="pt-6 border-t border-zinc-700/50">
-                <h3 className="text-lg font-semibold text-white mb-4">Follow Me</h3>
-                <div className="flex space-x-4">
-                  {[
-                    { href: "https://github.com", icon: Github },
-                    { href: "https://linkedin.com", icon: Linkedin },
-                    { href: "https://twitter.com", icon: Twitter },
-                  ].map(({ href, icon: Icon }) => (
-                    <a key={href} href={href} target="_blank" rel="noopener noreferrer"
-                      className="w-12 h-12 bg-zinc-800 hover:bg-zinc-700 rounded-xl flex items-center justify-center transition-all hover:scale-110">
-                      <Icon className="w-6 h-6 text-zinc-400 hover:text-white transition-colors" />
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* CTA */}
-            <div className="flex items-center justify-center">
-              <div className="text-center space-y-6">
-                <div className="w-32 h-32 mx-auto bg-gradient-to-br from-zinc-600 via-zinc-700 to-zinc-900 rounded-full flex items-center justify-center shadow-2xl shadow-black/50">
-                  <Mail className="w-16 h-16 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Ready to start?</h3>
-                  <p className="text-zinc-400 mb-6">Let's discuss your project and bring your vision to life.</p>
-                  <a href="mailto:alex.morgan@example.com">
-                    <Button size="lg" className="bg-zinc-800 hover:bg-zinc-700 text-white border border-zinc-700 shadow-lg shadow-black/50">
-                      Send Message
-                      <ArrowRight className="ml-2 w-4 h-4" />
-                    </Button>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Card>
       </div>
     </section>
   );

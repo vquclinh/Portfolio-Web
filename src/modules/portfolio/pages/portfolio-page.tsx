@@ -11,7 +11,6 @@ export function PortfolioPage() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <Badge className="mb-4 bg-cyan-500/20 text-zinc-300 border-cyan-500/30">My Work</Badge>
           <h1 className="text-5xl mb-4 font-bold">
             <span className="bg-gradient-to-r from-zinc-200 via-zinc-300 to-zinc-400 bg-clip-text text-transparent">Portfolio</span>
           </h1>
