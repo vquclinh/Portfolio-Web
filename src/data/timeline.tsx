@@ -8,16 +8,16 @@ export const timelineEvents: TimelineEvent[] = [
   {
     id: "t1",
     date: "09/2022",
-    description: "Bắt đầu hành trình đại học tại Khoa CNTT, HCMUS.",
+    description: "Comming soon...",
   },
   {
     id: "t2",
     date: "12/2024",
-    description: "Hoàn thành Spotify Console UI bằng C++ và Rust.",
+    description: "Comming soon...",
   },
   {
     id: "t3",
     date: "03/2025",
-    description: "Bắt đầu research về Discrete Diffusion Models.",
+    description: "Comming soon...",
   },
 ];
