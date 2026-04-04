@@ -1,14 +1,6 @@
 import { memories, type MemoryCategory } from "../../../data/memories";
 
-const CATEGORIES: MemoryCategory[] = ["Scholarship", "Work", "University", "High School", "Life"];
-
-const CATEGORY_COLOR: Record<MemoryCategory, string> = {
-  Scholarship: "bg-amber-950/60  text-amber-300  border-amber-800/40",
-  Work:        "bg-teal-950/60   text-teal-300   border-teal-800/40",
-  University:  "bg-sky-950/60    text-sky-300    border-sky-800/40",
-  "High School":"bg-violet-950/60 text-violet-300 border-violet-800/40",
-  Life:        "bg-pink-950/60   text-pink-300   border-pink-800/40",
-};
+const CATEGORIES: MemoryCategory[] = ["Scholarship", "Math Team", "University", "12T1 - Le Khiet High School for The Gifted", "Life"];
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
@@ -26,37 +18,21 @@ function MemoryGrid({ items }: { items: typeof memories }) {
       {items.map((memory, i) => {
         const isTall = i % 5 === 0 || i % 5 === 3;
         const isWide = i % 7 === 1;
-        const tagColor = CATEGORY_COLOR[memory.category];
-
         return (
           <div
             key={memory.id}
             className={`
-              group relative overflow-hidden rounded-xl break-inside-avoid
+              overflow-hidden rounded-xl break-inside-avoid bg-zinc-800 cursor-pointer
               ${isTall ? "h-80" : isWide ? "h-48" : "h-60"}
-              bg-zinc-800 cursor-pointer
             `}
           >
             {memory.image && (
               <img
                 src={memory.image}
-                alt={memory.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                alt={memory.id}
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
               />
             )}
-
-            {/* Overlay on hover */}
-            <div className="absolute inset-0 bg-zinc-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-              <p className="text-[10px] tracking-widest text-zinc-400 uppercase mb-1">
-                {memory.date}
-              </p>
-              <h3 className="text-sm font-semibold text-white leading-snug">
-                {memory.title}
-              </h3>
-              <span className={`mt-2 inline-block px-2 py-0.5 rounded text-[10px] border w-fit ${tagColor}`}>
-                {memory.category}
-              </span>
-            </div>
           </div>
         );
       })}
