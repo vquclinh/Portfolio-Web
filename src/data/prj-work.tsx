@@ -4,8 +4,10 @@ import spotifycuiImg from "../assets/prj-img/spotify-cui.png"
 import datastrucImg from "../assets/prj-img/datastructurevis.png"
 import marioImg from "../assets/prj-img/mario.png"
 import portfolioImg from "../assets/prj-img/portfolio.png";
+import flappybirdImg from "../assets/prj-img/flappybird.png"
+import chess3dImg from "../assets/prj-img/chess3D.png"
 
-// ── Research ──
+// Research
 export const research = [
    {
       id: "r1",
@@ -31,7 +33,7 @@ export const research = [
    },
 ];
 
-// ── Projects ──
+// Projects
 export type ProjectDomain = "AI" | "Web" | "Game" | "App";
 
 export const projects = [
@@ -50,11 +52,11 @@ export const projects = [
   {
       id: "p3",
       title: "Spotify Console UI",
-      date: "2024",
+      date: "2026",
       domain: "App" as ProjectDomain,
       description:
          "A terminal-based Spotify client built with C++ and Rust, featuring a keyboard-driven TUI for browsing playlists, controlling playback, and searching tracks via the Spotify Web API.",
-      tags: ["C++", "Rust", "TUI", "Spotify API", "CLI"],
+      tags: [ "Rust", "C++", "TUI", "Spotify API", "CLI"],
       demo: "",
       github: "https://github.com/vquclinh/console-spotify",
       image: spotifycuiImg,
@@ -86,19 +88,19 @@ export const projects = [
   {
       id: "p8",
       title: "Chess Game 3D",
-      date: "2025",
+      date: "2024",
       domain: "Game" as ProjectDomain,
       description:
          "A 3D chess game in C++ and SFML with custom Blender-modeled pieces, full rule enforcement, and an interactive board rendered in 3D perspective.",
       tags: ["C++", "SFML", "Blender", "3D", "Game"],
       demo: "",
       github: "https://github.com/vquclinh/Chess-3D",
-      image: "/images/web.png",
+      image: chess3dImg,
    },
    {
       id: "p6",
       title: "Portfolio Website",
-      date: "2025",
+      date: "2026",
       domain: "Web" as ProjectDomain,
       description:
          "This portfolio — built with React, TypeScript, and Tailwind CSS, featuring a project showcase, memories section, and personal timeline.",
@@ -110,14 +112,14 @@ export const projects = [
   {
       id: "p9",
       title: "Flappy Bird Game",
-      date: "2025",
+      date: "2024",
       domain: "Game" as ProjectDomain,
       description:
          "A Flappy Bird clone in C++ and SFML with smooth physics, procedural pipe generation, and high score tracking.",
       tags: ["C++", "SFML", "Game"],
       demo: "",
       github: "https://github.com/vquclinh/FlappyBirdGame",
-      image: "/images/web.png",
+      image: flappybirdImg,
    },
   
 ];

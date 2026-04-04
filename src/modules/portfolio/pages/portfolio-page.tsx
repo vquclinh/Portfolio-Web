@@ -42,7 +42,7 @@ function ResearchCard({ item }: { item: (typeof research)[number] }) {
           <img
             src={item.image}
             alt={item.title}
-            className="w-full h-full object-cover opacity-100 group-hover:opacity-70 group-hover:scale-[1.03] transition-all duration-300"
+            className="w-full h-full object-cover opacity-100 group-hover:opacity-80 group-hover:scale-[1.08] transition-all duration-500"
           />
         )}
         <div className="absolute top-2.5 left-2.5">
@@ -58,7 +58,7 @@ function ResearchCard({ item }: { item: (typeof research)[number] }) {
 
       <div className="p-5 flex flex-col flex-1 gap-4">
         <div className="flex-1">
-          <h3 className="text-sm font-semibold text-white mb-2 leading-snug">{item.title}</h3>
+          <h3 className="text-sm font-semibold text-white mb-2 leading-snug group-hover:text-cyan-300 transition-colors duration-200">{item.title}</h3>
           <p className="text-xs text-zinc-300 leading-relaxed line-clamp-5">{item.description}</p>
         </div>
 
@@ -93,14 +93,14 @@ function ProjectCard({ item }: { item: (typeof projects)[number] }) {
   const DomainIcon = config.icon;
 
   return (
-    <div className="group rounded-xl border border-zinc-800 bg-zinc-900 hover:border-zinc-600 transition-all duration-200 overflow-hidden flex flex-col">
+    <div className="group rounded-xl border border-zinc-800 bg-zinc-900 hover:border-emerald-900/60 transition-all duration-200 overflow-hidden flex flex-col">
 
       <div className="relative h-50 overflow-hidden bg-zinc-800 shrink-0">
         {item.image && (
           <img
             src={item.image}
             alt={item.title}
-            className="w-full h-full object-cover opacity-100 group-hover:opacity-70 group-hover:scale-[1.03] transition-all duration-300"
+            className="w-full h-full object-cover opacity-100 group-hover:opacity-80 group-hover:scale-[1.08] transition-all duration-500"
           />
         )}
         <div className="absolute top-2.5 left-2.5">
@@ -116,26 +116,26 @@ function ProjectCard({ item }: { item: (typeof projects)[number] }) {
 
       <div className="p-5 flex flex-col flex-1 gap-3">
         <div>
-          <h3 className="text-sm font-semibold text-white mb-2">{item.title}</h3>
+          <h3 className="text-sm font-semibold text-white mb-2 group-hover:text-emerald-300 transition-colors duration-200">{item.title}</h3>
           <p className="text-xs text-zinc-300 leading-relaxed line-clamp-5">{item.description}</p>
         </div>
 
         <div className="flex flex-wrap gap-1 mt-auto pt-1">
           {item.tags.map((tag) => (
-             <span key={tag} className="px-2 py-0.5 rounded text-[10px] bg-zinc-700/60 text-zinc-200 border border-zinc-600/60">
-                {tag}
+             <span key={tag} className="px-2 py-0.5 rounded text-[10px] bg-emerald-950/50 text-emerald-300 border-emerald-800/40">
+               {tag}
              </span>
           ))}
         </div>
 
         <div className="flex gap-3 pt-3 border-t border-zinc-800">
           {item.demo && (
-            <a href={item.demo} className="flex items-center gap-1 text-xs text-zinc-400 hover:text-white transition-colors">
+            <a href={item.demo} className="flex items-center gap-1 text-xs text-zinc-400 hover:text-emerald-300 transition-colors">
               <ExternalLink className="w-3 h-3" /> Demo
             </a>
           )}
           {item.github && (
-            <a href={item.github} className="flex items-center gap-1 text-xs text-zinc-400 hover:text-white transition-colors">
+            <a href={item.github} className="flex items-center gap-1 text-xs text-zinc-400 hover:text-emerald-300 transition-colors">
               <Github className="w-3 h-3" /> Code
             </a>
           )}

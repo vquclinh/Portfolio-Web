@@ -47,9 +47,13 @@ export function NavBar() {
       setReady(true);
     };
 
-    // Small delay so DOM is painted before measuring
-    const raf = requestAnimationFrame(updateSliders);
-    return () => cancelAnimationFrame(raf);
+    const raf     = requestAnimationFrame(updateSliders);
+    const timeout = setTimeout(updateSliders, 100);
+
+    return () => {
+       cancelAnimationFrame(raf);
+       clearTimeout(timeout);
+    };
   }, [activeIndex]);
 
   return (
@@ -91,7 +95,7 @@ export function NavBar() {
           })}
         </div>
 
-        {/* ── Mobile ── */}
+        {/* Mobile */}
         <div className="relative flex md:hidden items-center gap-1">
           {/* Sliding pill */}
           <span

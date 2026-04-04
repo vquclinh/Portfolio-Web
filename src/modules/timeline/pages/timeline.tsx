@@ -17,7 +17,6 @@ export function TimelinePage() {
         {/* Timeline */}
         <div className="relative">
 
-          {/* Đường đứt giữa */}
           <div
             className="absolute left-1/2 top-0 bottom-0 -translate-x-1/2"
             style={{
@@ -43,17 +42,14 @@ export function TimelinePage() {
               return (
                 <div key={event.id} className="relative flex items-start">
 
-                  {/* Trái */}
                   <div className="w-1/2 pr-8 flex justify-end">
                     {isLeft && Card}
                   </div>
 
-                  {/* Dot */}
                   <div className="absolute left-1/2 -translate-x-1/2 z-10" style={{ top: "14px" }}>
                     <div className="w-3 h-3 rounded-full bg-zinc-300 border-2 border-zinc-950 shadow-[0_0_6px_rgba(255,255,255,0.2)]" />
                   </div>
 
-                  {/* Phải */}
                   <div className="w-1/2 pl-8">
                     {!isLeft && Card}
                   </div>
