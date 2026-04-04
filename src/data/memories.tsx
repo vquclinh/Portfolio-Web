@@ -51,5 +51,3 @@ export const memories: Memory[] = [
     image: "",
   },
 ];
-
-export const timelineEvents = [];
