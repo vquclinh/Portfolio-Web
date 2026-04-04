@@ -1,89 +1,99 @@
-import { Calendar, Heart } from "lucide-react";
-import { Card } from "../../../shared/components/ui/card";
-import { Badge } from "../../../shared/components/ui/badge";
-import { ImageWithFallback } from "../../../shared/components/ui/image-with-fallback";
-import { memories } from "../../../data/memories";
+import { memories, type MemoryCategory } from "../../../data/memories";
 
-// Memories data - easy to add/update
-const categories = ["All", "Travel", "Work", "Life", "Culture", "Milestone"];
+const CATEGORIES: MemoryCategory[] = ["Scholarship", "Work", "University", "High School", "Life"];
+
+const CATEGORY_COLOR: Record<MemoryCategory, string> = {
+  Scholarship: "bg-amber-950/60  text-amber-300  border-amber-800/40",
+  Work:        "bg-teal-950/60   text-teal-300   border-teal-800/40",
+  University:  "bg-sky-950/60    text-sky-300    border-sky-800/40",
+  "High School":"bg-violet-950/60 text-violet-300 border-violet-800/40",
+  Life:        "bg-pink-950/60   text-pink-300   border-pink-800/40",
+};
+
+function SectionLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex items-center gap-4 mb-6">
+      <p className="text-xs tracking-[0.25em] text-zinc-200 uppercase shrink-0">{children}</p>
+      <div className="h-px flex-1 bg-zinc-700" />
+    </div>
+  );
+}
+
+function MemoryGrid({ items }: { items: typeof memories }) {
+  if (items.length === 0) return null;
+  return (
+    <div className="columns-2 md:columns-3 gap-3 space-y-3">
+      {items.map((memory, i) => {
+        const isTall = i % 5 === 0 || i % 5 === 3;
+        const isWide = i % 7 === 1;
+        const tagColor = CATEGORY_COLOR[memory.category];
+
+        return (
+          <div
+            key={memory.id}
+            className={`
+              group relative overflow-hidden rounded-xl break-inside-avoid
+              ${isTall ? "h-80" : isWide ? "h-48" : "h-60"}
+              bg-zinc-800 cursor-pointer
+            `}
+          >
+            {memory.image && (
+              <img
+                src={memory.image}
+                alt={memory.title}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            )}
+
+            {/* Overlay on hover */}
+            <div className="absolute inset-0 bg-zinc-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+              <p className="text-[10px] tracking-widest text-zinc-400 uppercase mb-1">
+                {memory.date}
+              </p>
+              <h3 className="text-sm font-semibold text-white leading-snug">
+                {memory.title}
+              </h3>
+              <span className={`mt-2 inline-block px-2 py-0.5 rounded text-[10px] border w-fit ${tagColor}`}>
+                {memory.category}
+              </span>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
 
 export function MemoriesPage() {
   return (
-    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <Badge className="mb-4 bg-pink-500/20 text-pink-300 border-pink-500/30">Personal Stories</Badge>
-          <h1 className="text-5xl mb-4 font-bold">
-            <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">Memories</span>
-          </h1>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Capturing moments that matter, stories that inspire, and experiences that shape who I am.
-          </p>
+    <div className="min-h-screen bg-zinc-950 text-white">
+      <div className="pt-24" />
+
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 space-y-16">
+
+        <div>
+          <p className="text-xs tracking-[0.25em] text-zinc-500 uppercase mb-3">Personal Stories</p>
+          <h1 className="text-4xl font-bold tracking-tight">Memories</h1>
+          <div className="mt-4 h-px w-16 bg-gradient-to-r from-zinc-400 to-transparent" />
         </div>
 
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {categories.map((category) => (
-            <Badge
-              key={category}
-              variant={category === "All" ? "default" : "outline"}
-              className={`cursor-pointer transition-all px-4 py-2 ${
-                category === "All"
-                  ? "bg-gradient-to-r from-pink-500 to-purple-600 text-white border-none hover:from-pink-600 hover:to-purple-700"
-                  : "border-white/20 text-gray-400 hover:bg-white/10 hover:text-white"
-              }`}
-            >
-              {category}
-            </Badge>
-          ))}
-        </div>
+        {CATEGORIES.map((cat) => {
+          const items = memories.filter((m) => m.category === cat);
+          if (items.length === 0) return null;
+          return (
+            <section key={cat}>
+              <SectionLabel>{cat}</SectionLabel>
+              <MemoryGrid items={items} />
+            </section>
+          );
+        })}
 
-        {/* Memories Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {memories.map((memory) => (
-            <Card key={memory.id} className="overflow-hidden bg-slate-800/50 border-white/10 backdrop-blur-sm hover:shadow-2xl hover:shadow-pink-500/20 transition-all group">
-              <div className="relative h-56 overflow-hidden bg-gray-900">
-                <ImageWithFallback
-                  src={memory.image}
-                  alt={memory.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60"></div>
-                <div className="absolute top-4 left-4">
-                  <Badge className="bg-pink-500/90 text-white border-none">
-                    {memory.category}
-                  </Badge>
-                </div>
-              </div>
-              <div className="p-6">
-                <div className="flex items-center text-sm text-gray-500 mb-3">
-                  <Calendar className="w-4 h-4 mr-2" />
-                  {memory.date}
-                </div>
-                <h3 className="text-xl mb-3 text-white font-bold">{memory.title}</h3>
-                <p className="text-gray-400 leading-relaxed mb-4 line-clamp-4">
-                  {memory.description}
-                </p>
-                <div className="flex items-center text-pink-400">
-                  <Heart className="w-5 h-5 mr-2 fill-current" />
-                  <span>{memory.likes} likes</span>
-                </div>
-              </div>
-            </Card>
-          ))}
-        </div>
+        {memories.length === 0 && (
+          <div className="text-center py-32">
+            <p className="text-zinc-600 text-sm">No memories yet.</p>
+          </div>
+        )}
 
-        {/* Add New Memory CTA */}
-        <div className="mt-16 text-center">
-          <Card className="p-12 bg-gradient-to-br from-pink-500/10 to-purple-500/10 border-pink-500/20 border-2 border-dashed backdrop-blur-sm">
-            <Heart className="w-16 h-16 text-pink-400 mx-auto mb-4" />
-            <h3 className="text-2xl mb-3 text-white font-bold">Want to Add More Memories?</h3>
-            <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
-              To add or update memories, simply edit the memories array in /src/app/data/content.ts. Each memory includes a title, date, category, description, image, and likes count.
-            </p>
-          </Card>
-        </div>
       </div>
     </div>
   );

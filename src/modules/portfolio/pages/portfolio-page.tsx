@@ -26,8 +26,8 @@ const SKILL_GROUPS: SkillGroup[] = [
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex items-center gap-4 mb-6">
-      <p className="text-xs tracking-[0.25em] text-zinc-500 uppercase shrink-0">{children}</p>
-      <div className="h-px flex-1 bg-zinc-800" />
+      <p className="text-xs tracking-[0.25em] text-zinc-50 uppercase shrink-0">{children}</p>
+      <div className="h-px flex-1 bg-zinc-400" />
     </div>
   );
 }
@@ -35,7 +35,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 // Research Card
 function ResearchCard({ item }: { item: (typeof research)[number] }) {
   return (
-    <div className="group rounded-xl border border-zinc-800 bg-zinc-900 hover:border-violet-800/60 transition-all duration-200 overflow-hidden flex flex-col">
+    <div className="group rounded-xl border border-zinc-800 bg-zinc-900 hover:border-cyan-800/60 transition-all duration-200 overflow-hidden flex flex-col">
 
       <div className="relative h-50 overflow-hidden bg-zinc-800 shrink-0">
         {item.image && (
@@ -46,12 +46,12 @@ function ResearchCard({ item }: { item: (typeof research)[number] }) {
           />
         )}
         <div className="absolute top-2.5 left-2.5">
-          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] border font-medium text-violet-300 bg-violet-950/70 border-violet-800/50">
+          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] border font-medium text-cyan-300 bg-cyan-950/70 border-cyan-800/50">
             <FlaskConical className="w-2.5 h-2.5" />
             Research
           </span>
         </div>
-        <span className="absolute top-2.5 right-2.5 text-[10px] text-zinc-500 bg-zinc-900/70 px-2 py-0.5 rounded">
+        <span className="absolute top-2.5 right-2.5 text-[10px] text-zinc-100 bg-zinc-900/70 px-2 py-0.5 rounded">
           {item.date}
         </span>
       </div>
@@ -59,12 +59,12 @@ function ResearchCard({ item }: { item: (typeof research)[number] }) {
       <div className="p-5 flex flex-col flex-1 gap-4">
         <div className="flex-1">
           <h3 className="text-sm font-semibold text-white mb-2 leading-snug">{item.title}</h3>
-          <p className="text-xs text-zinc-500 leading-relaxed line-clamp-5">{item.description}</p>
+          <p className="text-xs text-zinc-300 leading-relaxed line-clamp-5">{item.description}</p>
         </div>
 
         <div className="flex flex-wrap gap-1">
           {item.tags.map((tag) => (
-             <span key={tag} className="px-2 py-0.5 rounded text-[10px] bg-violet-950/40 text-violet-300 border border-violet-800/30">
+             <span key={tag} className="px-2 py-0.5 rounded text-[10px] bg-cyan-950/40 text-cyan-300 border border-cyan-800/30">
                 {tag}
              </span>
           ))}
@@ -72,12 +72,12 @@ function ResearchCard({ item }: { item: (typeof research)[number] }) {
 
         <div className="flex gap-3 pt-3 border-t border-zinc-800">
           {item.paper && (
-            <a href={item.paper} className="flex items-center gap-1 text-xs text-zinc-400 hover:text-violet-300 transition-colors">
+            <a href={item.paper} className="flex items-center gap-1 text-xs text-zinc-400 hover:text-cyan-300 transition-colors">
               <ArrowUpRight className="w-3 h-3" /> Paper
             </a>
           )}
           {item.github && (
-            <a href={item.github} className="flex items-center gap-1 text-xs text-zinc-400 hover:text-violet-300 transition-colors">
+            <a href={item.github} className="flex items-center gap-1 text-xs text-zinc-400 hover:text-cyan-300 transition-colors">
               <Github className="w-3 h-3" /> Code
             </a>
           )}
@@ -109,7 +109,7 @@ function ProjectCard({ item }: { item: (typeof projects)[number] }) {
             {config.label}
           </span>
         </div>
-        <span className="absolute top-2.5 right-2.5 text-[10px] text-zinc-500 bg-zinc-900/70 px-2 py-0.5 rounded">
+        <span className="absolute top-2.5 right-2.5 text-[10px] text-zinc-100 bg-zinc-900/70 px-2 py-0.5 rounded">
           {item.date}
         </span>
       </div>
@@ -117,12 +117,12 @@ function ProjectCard({ item }: { item: (typeof projects)[number] }) {
       <div className="p-5 flex flex-col flex-1 gap-3">
         <div>
           <h3 className="text-sm font-semibold text-white mb-2">{item.title}</h3>
-          <p className="text-xs text-zinc-500 leading-relaxed line-clamp-5">{item.description}</p>
+          <p className="text-xs text-zinc-300 leading-relaxed line-clamp-5">{item.description}</p>
         </div>
 
         <div className="flex flex-wrap gap-1 mt-auto pt-1">
           {item.tags.map((tag) => (
-             <span key={tag} className="px-2 py-0.5 rounded text-[10px] bg-zinc-800 text-zinc-400 border border-zinc-700/40">
+             <span key={tag} className="px-2 py-0.5 rounded text-[10px] bg-zinc-700/60 text-zinc-200 border border-zinc-600/60">
                 {tag}
              </span>
           ))}
@@ -180,12 +180,12 @@ export function PortfolioPage() {
               return (
                 <div key={group.label} className="rounded-xl border border-zinc-800 bg-zinc-900 p-5">
                   <div className="flex items-center gap-2 mb-4">
-                    <GroupIcon className="w-3.5 h-3.5 text-zinc-500" />
-                    <span className="text-[10px] tracking-widest text-zinc-500 uppercase">{group.label}</span>
+                    <GroupIcon className="w-3.5 h-3.5 text-zinc-200" />
+                    <span className="text-[10px] tracking-widest text-zinc-200 uppercase">{group.label}</span>
                   </div>
                   <div className="flex flex-wrap gap-1.5">
                     {group.items.map((skill) => (
-                      <span key={skill} className="px-2.5 py-1 rounded-md text-xs bg-zinc-800 text-zinc-300 border border-zinc-700/40 hover:border-zinc-500 hover:text-white transition-colors cursor-default">
+                      <span key={skill} className="px-2.5 py-1 rounded-md text-xs bg-zinc-700 text-zinc-200 border border-zinc-700/40 hover:border-zinc-500 hover:text-white transition-colors cursor-default">
                         {skill}
                       </span>
                     ))}
