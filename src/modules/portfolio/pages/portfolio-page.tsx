@@ -36,8 +36,8 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 function ResearchCard({ item }: { item: (typeof research)[number] }) {
   return (
     <div className="group rounded-xl border border-zinc-800 bg-zinc-900 hover:border-violet-800/60 transition-all duration-200 overflow-hidden flex flex-col">
-      
-      <div className="relative h-36 overflow-hidden bg-zinc-800 shrink-0">
+
+      <div className="relative h-50 overflow-hidden bg-zinc-800 shrink-0">
         {item.image && (
           <img
             src={item.image}
@@ -45,7 +45,6 @@ function ResearchCard({ item }: { item: (typeof research)[number] }) {
             className="w-full h-full object-cover opacity-100 group-hover:opacity-70 group-hover:scale-[1.03] transition-all duration-300"
           />
         )}
-        {/* Badge Research */}
         <div className="absolute top-2.5 left-2.5">
           <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] border font-medium text-violet-300 bg-violet-950/70 border-violet-800/50">
             <FlaskConical className="w-2.5 h-2.5" />
@@ -57,33 +56,32 @@ function ResearchCard({ item }: { item: (typeof research)[number] }) {
         </span>
       </div>
 
-      {/* Body */}
       <div className="p-5 flex flex-col flex-1 gap-4">
         <div className="flex-1">
           <h3 className="text-sm font-semibold text-white mb-2 leading-snug">{item.title}</h3>
-          <p className="text-xs text-zinc-500 leading-relaxed line-clamp-3">{item.description}</p>
+          <p className="text-xs text-zinc-500 leading-relaxed line-clamp-5">{item.description}</p>
         </div>
 
         <div className="flex flex-wrap gap-1">
-          {item.tags.slice(0, 4).map((tag) => (
-            <span key={tag} className="px-2 py-0.5 rounded text-[10px] bg-violet-950/40 text-violet-300 border border-violet-800/30">
-              {tag}
-            </span>
+          {item.tags.map((tag) => (
+             <span key={tag} className="px-2 py-0.5 rounded text-[10px] bg-violet-950/40 text-violet-300 border border-violet-800/30">
+                {tag}
+             </span>
           ))}
         </div>
 
         <div className="flex gap-3 pt-3 border-t border-zinc-800">
-         {item.paper && (
+          {item.paper && (
             <a href={item.paper} className="flex items-center gap-1 text-xs text-zinc-400 hover:text-violet-300 transition-colors">
-               <ArrowUpRight className="w-3 h-3" /> Paper
+              <ArrowUpRight className="w-3 h-3" /> Paper
             </a>
-         )}
-         {item.github && (
+          )}
+          {item.github && (
             <a href={item.github} className="flex items-center gap-1 text-xs text-zinc-400 hover:text-violet-300 transition-colors">
-               <Github className="w-3 h-3" /> Code
+              <Github className="w-3 h-3" /> Code
             </a>
-         )}
-         </div>
+          )}
+        </div>
       </div>
     </div>
   );
@@ -91,12 +89,13 @@ function ResearchCard({ item }: { item: (typeof research)[number] }) {
 
 // Project Card
 function ProjectCard({ item }: { item: (typeof projects)[number] }) {
-  const config    = DOMAIN_CONFIG[item.domain];
+  const config     = DOMAIN_CONFIG[item.domain];
   const DomainIcon = config.icon;
 
   return (
     <div className="group rounded-xl border border-zinc-800 bg-zinc-900 hover:border-zinc-600 transition-all duration-200 overflow-hidden flex flex-col">
-      <div className="relative h-36 overflow-hidden bg-zinc-800 shrink-0">
+
+      <div className="relative h-50 overflow-hidden bg-zinc-800 shrink-0">
         {item.image && (
           <img
             src={item.image}
@@ -115,35 +114,32 @@ function ProjectCard({ item }: { item: (typeof projects)[number] }) {
         </span>
       </div>
 
-      <div className="p-4 flex flex-col flex-1 gap-3">
+      <div className="p-5 flex flex-col flex-1 gap-3">
         <div>
-          <h3 className="text-sm font-semibold text-white mb-1.5">{item.title}</h3>
-          <p className="text-xs text-zinc-500 leading-relaxed line-clamp-2">{item.description}</p>
+          <h3 className="text-sm font-semibold text-white mb-2">{item.title}</h3>
+          <p className="text-xs text-zinc-500 leading-relaxed line-clamp-5">{item.description}</p>
         </div>
 
-        <div className="flex flex-wrap gap-1 mt-auto">
-          {item.tags.slice(0, 3).map((tag) => (
-            <span key={tag} className="px-2 py-0.5 rounded text-[10px] bg-zinc-800 text-zinc-400 border border-zinc-700/40">
-              {tag}
-            </span>
+        <div className="flex flex-wrap gap-1 mt-auto pt-1">
+          {item.tags.map((tag) => (
+             <span key={tag} className="px-2 py-0.5 rounded text-[10px] bg-zinc-800 text-zinc-400 border border-zinc-700/40">
+                {tag}
+             </span>
           ))}
-          {item.tags.length > 3 && (
-            <span className="text-[10px] text-zinc-600 self-center">+{item.tags.length - 3}</span>
-          )}
         </div>
 
         <div className="flex gap-3 pt-3 border-t border-zinc-800">
-         {item.demo && (
+          {item.demo && (
             <a href={item.demo} className="flex items-center gap-1 text-xs text-zinc-400 hover:text-white transition-colors">
-               <ExternalLink className="w-3 h-3" /> Demo
+              <ExternalLink className="w-3 h-3" /> Demo
             </a>
-         )}
-         {item.github && (
+          )}
+          {item.github && (
             <a href={item.github} className="flex items-center gap-1 text-xs text-zinc-400 hover:text-white transition-colors">
-               <Github className="w-3 h-3" /> Code
+              <Github className="w-3 h-3" /> Code
             </a>
-         )}
-         </div>
+          )}
+        </div>
       </div>
     </div>
   );
