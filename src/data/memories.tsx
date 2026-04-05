@@ -14,6 +14,7 @@ import a7 from "../assets/memories/highschool/a7.jpg"
 import a8 from "../assets/memories/highschool/a8.jpg"
 import a9 from "../assets/memories/highschool/a9.jpg"
 import mama from "../assets/memories/highschool/mama.jpg"
+import reve from "../assets/memories/highschool/reve.jpg"
 
 import math1 from "../assets/memories/mathteam/team1.jpg"
 import math2 from "../assets/memories/mathteam/team2.jpg"
@@ -62,6 +63,7 @@ export const memories: Memory[] = [
   { id: "h7", date: "2025", category: "12T1 - Le Khiet High School for The Gifted", image: a7},
   { id: "h8", date: "2025", category: "12T1 - Le Khiet High School for The Gifted", image: a8},
   { id: "m9", date: "2025", category: "12T1 - Le Khiet High School for The Gifted", image: a9},
-  { id: "m19", date: "2025", category: "12T1 - Le Khiet High School for The Gifted", image: mama}
+  { id: "m19", date: "2025", category: "12T1 - Le Khiet High School for The Gifted", image: mama},
+  { id: "m20", date: "2025", category: "12T1 - Le Khiet High School for The Gifted", image: reve}
 
 ];
