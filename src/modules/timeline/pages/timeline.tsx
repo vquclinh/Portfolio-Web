@@ -26,7 +26,7 @@ export function TimelinePage() {
           />
 
           <div className="space-y-10">
-            {timelineEvents.map((event, i) => {
+            {timelineEvents.slice().reverse().map((event, i) => {
               const isLeft = i % 2 === 0;
 
               const Card = (
