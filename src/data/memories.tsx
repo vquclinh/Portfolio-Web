@@ -21,7 +21,6 @@ import math2 from "../assets/memories/mathteam/team2.jpg"
 import math3 from "../assets/memories/mathteam/team3.jpg"
 import math4 from "../assets/memories/mathteam/team4.jpg"
 import math5 from "../assets/memories/mathteam/team5.jpg"
-import math6 from "../assets/memories/mathteam/team6.jpg"
 import math7 from "../assets/memories/mathteam/team7.jpg"
 import math8 from "../assets/memories/mathteam/team8.jpg"
 import math9 from "../assets/memories/mathteam/team9.jpg"
@@ -49,7 +48,6 @@ export const memories: Memory[] = [
   { id: "m5", date: "2025", category: "Math Team", image: math3   },
   { id: "m5", date: "2025", category: "Math Team", image: math4   },
   { id: "m5", date: "2025", category: "Math Team", image: math5   },
-  { id: "m5", date: "2025", category: "Math Team", image: math6   },
   { id: "m5", date: "2025", category: "Math Team", image: math7   },
   { id: "m5", date: "2025", category: "Math Team", image: math8   },
   { id: "m5", date: "2025", category: "Math Team", image: math9   },
