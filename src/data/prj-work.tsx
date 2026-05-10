@@ -11,17 +11,6 @@ import chess3dImg from "../assets/prj-img/chess3D.png"
 export const research = [
    {
       id: "r1",
-      title: "Discrete Diffusion Models and Masking Strategies for LLMs",
-      date: "2026",
-      description:
-         "We propose improvements to the forward process of discrete diffusion models for language modeling — introducing a novel token masking schedule and masking strategy as an alternative to autoregressive LLMs.",
-      tags: ["Python", "PyTorch", "Discrete Diffusion", "NLP", "LLM"],
-      paper: "",
-      github: "",
-      image: lawdisImg,
-   },
-   {
-      id: "r2",
       title: "Depth-Guided Classifier Guidance for Dichotomous Image Segmentation",
       date: "2026",
       description:
