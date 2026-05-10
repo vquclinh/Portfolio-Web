@@ -40,12 +40,12 @@ export const projects = [
   },
   {
       id: "p3",
-      title: "Spotify Console UI",
+      title: "Spotify Console UI (Spotty)",
       date: "2026",
       domain: "App" as ProjectDomain,
       description:
          "A terminal-based Spotify client built with C++ and Rust, featuring a keyboard-driven TUI for browsing playlists, controlling playback, and searching tracks via the Spotify Web API.",
-      tags: [ "Rust", "C++", "TUI", "Spotify API", "CLI"],
+      tags: [ "Rust", "TUI", "Spotify API", "CLI"],
       demo: "",
       github: "https://github.com/vquclinh/console-spotify",
       image: spotifycuiImg,
