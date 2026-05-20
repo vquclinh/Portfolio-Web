@@ -46,7 +46,7 @@ export const projects: Project[] = [
       domain: "Tool/Infrastructure",
       description:
           "Multi-agent AI system that automates dependency upgrades end-to-end. Transforms days of manual migration work — reading changelogs, rewriting code, fixing build errors — into one-click automated patches with verification and rollback. Self-hosted with IDE-like review.",
-      tags: ["React", "FastAPI", "LLM Agents", "Tree-sitter", "Dependency Automation"],
+      tags: ["FastAPI", "React", "Multi-Agent", "LLM Orchestration", "AST Parsing", "Tree-sitter", "DevOps Automation", "System Architecture"],
       demo: "",
       github: "https://github.com/vquclinh/DepGuard-AI",
       image: depguardImg,
