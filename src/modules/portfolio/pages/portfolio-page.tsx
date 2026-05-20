@@ -8,10 +8,12 @@ const DOMAIN_CONFIG: Record<ProjectDomain, {
   label: string;
   color: string;
 }> = {
-  AI:   { icon: Bot,        label: "AI",  color: "text-teal-400  bg-teal-950/50  border-teal-800/50"  },
-  Game: { icon: Gamepad2,   label: "Game",color: "text-amber-400 bg-amber-950/50 border-amber-800/50" },
-  Web:  { icon: Globe,      label: "Web", color: "text-sky-400   bg-sky-950/50   border-sky-800/50"   },
-  App:  { icon: AppWindow,  label: "App", color: "text-rose-400  bg-rose-950/50  border-rose-800/50"  },
+  AI:                    { icon: Bot,        label: "AI",    color: "text-teal-400  bg-teal-950/50   border-teal-800/50"   },
+  Game:                  { icon: Gamepad2,   label: "Game",  color: "text-amber-400 bg-amber-950/50  border-amber-800/50"  },
+  Web:                   { icon: Globe,      label: "Web",   color: "text-sky-400   bg-sky-950/50    border-sky-800/50"    },
+  App:                   { icon: AppWindow,  label: "App",   color: "text-rose-400  bg-rose-950/50   border-rose-800/50"   },
+  "Tool/Infrastructure": { icon: Cpu,        label: "Infra", color: "text-violet-300 bg-violet-950/50 border-violet-800/50" },
+  "App/TUI":             { icon: Code2,      label: "TUI",   color: "text-lime-300  bg-lime-950/50   border-lime-800/50"   },
 };
 
 // Skill groups

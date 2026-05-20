@@ -24,14 +24,26 @@ export const research = [
 ];
 
 // Projects
-export type ProjectDomain = "AI" | "Web" | "Game" | "App";
+export type ProjectDomain = "AI" | "Web" | "Game" | "App" | "Tool/Infrastructure" | "App/TUI";
 
-export const projects = [
+type Project = {
+  id: string;
+  title: string;
+  date: string;
+  domain: ProjectDomain;
+  description: string;
+  tags: string[];
+  demo: string;
+  github: string;
+  image: string;
+};
+
+export const projects: Project[] = [
   {
       id: "p1",
       title: "DepGuard AI",
       date: "2026",
-      domain: "Tool/Infrastructure" as ProjectDomain,
+      domain: "Tool/Infrastructure",
       description:
           "Multi-agent AI system that automates dependency upgrades end-to-end. Transforms days of manual migration work — reading changelogs, rewriting code, fixing build errors — into one-click automated patches with verification and rollback. Self-hosted with IDE-like review.",
       tags: ["React", "FastAPI", "LLM Agents", "Tree-sitter", "Dependency Automation"],
@@ -43,7 +55,7 @@ export const projects = [
       id: "p2",
       title: "Smart Food Tour Assistant",
       date: "2025",
-      domain: "AI" as ProjectDomain,
+      domain: "AI",
       description:
          "A RAG-powered multi-agent chatbot that helps tourists explore Ho Chi Minh City's food scene — answering questions and generating personalized food tour itineraries.",
       tags: ["React", "TypeScript", "Supabase", "RAG", "AI Agent", "LLM", "UI/UX"],
@@ -55,7 +67,7 @@ export const projects = [
       id: "p3",
       title: "Spotify Console UI (Spotty)",
       date: "2026",
-      domain: "App/TUI" as ProjectDomain,
+      domain: "App/TUI",
       description:
          "A terminal-based Spotify client built with C++ and Rust, featuring a keyboard-driven TUI for browsing playlists, controlling playback, and searching tracks via the Spotify Web API.",
       tags: [ "Rust", "TUI", "Spotify API", "CLI"],
@@ -67,7 +79,7 @@ export const projects = [
       id: "p7",
       title: "Super Mario Game",
       date: "2025",
-      domain: "Game" as ProjectDomain,
+      domain: "Game",
       description:
          "A Mario-style platformer in C++ and SFML applying 5 design patterns, adaptive enemy AI, a full power-up system, and LAN multiplayer with state synchronization.",
       tags: ["C++", "SFML", "OOP", "Design Patterns", "Multiplayer", "Game AI"],
@@ -79,7 +91,7 @@ export const projects = [
     id: "p4",
     title: "Data Structures Visualization",
     date: "2025",
-    domain: "App" as ProjectDomain,
+    domain: "App",
     description:
       "An interactive visualizer for linked list, graph, tree, and hash table — built with C++ and SFML, with real-time step-by-step animation using OOP design.",
     tags: ["C++", "SFML", "Algorithms"],
@@ -91,7 +103,7 @@ export const projects = [
       id: "p8",
       title: "Chess Game 3D",
       date: "2024",
-      domain: "Game" as ProjectDomain,
+      domain: "Game",
       description:
          "A 3D chess game in C++ and SFML with custom Blender-modeled pieces, full rule enforcement, and an interactive board rendered in 3D perspective.",
       tags: ["C++", "SFML", "Blender", "3D", "Game"],
@@ -103,7 +115,7 @@ export const projects = [
       id: "p6",
       title: "Portfolio Website",
       date: "2026",
-      domain: "Web" as ProjectDomain,
+      domain: "Web",
       description:
          "This portfolio — built with React, TypeScript, and Tailwind CSS, featuring a project showcase, memories section, and personal timeline.",
       tags: ["React", "TypeScript", "Tailwind CSS", "UI/UX"],
@@ -115,7 +127,7 @@ export const projects = [
       id: "p9",
       title: "Flappy Bird Game",
       date: "2024",
-      domain: "Game" as ProjectDomain,
+      domain: "Game",
       description:
          "A Flappy Bird clone in C++ and SFML with smooth physics, procedural pipe generation, and high score tracking.",
       tags: ["C++", "SFML", "Game"],
