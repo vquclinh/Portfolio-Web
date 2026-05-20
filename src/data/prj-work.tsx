@@ -3,9 +3,10 @@ import localfoodImg from "../assets/prj-img/local-food.png"
 import spotifycuiImg from "../assets/prj-img/spotify-cui.png"
 import datastrucImg from "../assets/prj-img/datastructurevis.png"
 import marioImg from "../assets/prj-img/mario.png"
-import portfolioImg from "../assets/prj-img/portfolio.png";
+import portfolioImg from "../assets/prj-img/portfolio.png"
 import flappybirdImg from "../assets/prj-img/flappybird.png"
 import chess3dImg from "../assets/prj-img/chess3D.png"
+import depguardImg from "../assets/prj-img/depguard.png"
 
 // Research
 export const research = [
@@ -27,6 +28,18 @@ export type ProjectDomain = "AI" | "Web" | "Game" | "App";
 
 export const projects = [
   {
+      id: "p1",
+      title: "DepGuard AI",
+      date: "2026",
+      domain: "Tool/Infrastructure" as ProjectDomain,
+      description:
+          "Multi-agent AI system that automates dependency upgrades end-to-end. Transforms days of manual migration work — reading changelogs, rewriting code, fixing build errors — into one-click automated patches with verification and rollback. Self-hosted with IDE-like review.",
+      tags: ["React", "FastAPI", "LLM Agents", "Tree-sitter", "Dependency Automation"],
+      demo: "",
+      github: "https://github.com/vquclinh/DepGuard-AI",
+      image: depguardImg,
+  },
+  {   
       id: "p2",
       title: "Smart Food Tour Assistant",
       date: "2025",
@@ -42,7 +55,7 @@ export const projects = [
       id: "p3",
       title: "Spotify Console UI (Spotty)",
       date: "2026",
-      domain: "App" as ProjectDomain,
+      domain: "App/TUI" as ProjectDomain,
       description:
          "A terminal-based Spotify client built with C++ and Rust, featuring a keyboard-driven TUI for browsing playlists, controlling playback, and searching tracks via the Spotify Web API.",
       tags: [ "Rust", "TUI", "Spotify API", "CLI"],
