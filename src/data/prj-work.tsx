@@ -7,6 +7,7 @@ import portfolioImg from "../assets/prj-img/portfolio.png"
 import flappybirdImg from "../assets/prj-img/flappybird.png"
 import chess3dImg from "../assets/prj-img/chess3D.png"
 import depguardImg from "../assets/prj-img/depguard.png"
+import pulselensImg from "../assets/prj-img/pulselens.png"
 
 // Research
 export const research = [
@@ -40,6 +41,18 @@ type Project = {
 
 export const projects: Project[] = [
   {
+      id: "p0",
+      title: "PulseLens",
+      date: "2026",
+      domain: "AI",
+      description:
+          "Evidence-backed market intelligence workspace for fast-moving sectors. A 14-node multi-agent pipeline collects live web data via Bright Data, extracts atomic facts, verifies every claim against its verbatim source, scores sentiment with FinBERT, triangulates across sources, and assembles a structured market report. Applies 11 peer-reviewed NLP methods (SAFE, FActScore, STORM, Self-RAG, FLARE, Multi-HyDE, etc.). Includes a full React analyst workspace with Signal Radar, Evidence Explorer, Pricing Intelligence, Company Lens, and grounded RAG chat.",
+      tags: ["Python", "FastAPI", "LangGraph", "React", "TypeScript", "Supabase", "Bright Data", "Multi-Agent", "RAG", "FinBERT", "OpenRouter", "Tailwind CSS"],
+      demo: "",
+      github: "https://github.com/vquclinh/PulseLens",
+      image: pulselensImg,
+  },
+  { 
       id: "p1",
       title: "DepGuard AI",
       date: "2026",
@@ -141,6 +154,6 @@ export const projects: Project[] = [
 // Skills
 export const skills = [
   "React", "TypeScript", "Tailwind CSS", "UI/UX Design", "Figma", "HTML/CSS",
-  "Python", "Rust", "C/C++", "Node.js", "REST API", "System Design",
+  "Python", "Rust", "C/C++", "Node.js", "FastAPI", "REST API", "System Design",
   "PyTorch", "LangChain", "LangGraph", "Git", "Docker", "Linux",
 ];
