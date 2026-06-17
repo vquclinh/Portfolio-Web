@@ -84,7 +84,7 @@ export const projects: Project[] = [
       description:
          "A terminal-based Spotify client built with C++ and Rust, featuring a keyboard-driven TUI for browsing playlists, controlling playback, and searching tracks via the Spotify Web API.",
       tags: [ "Rust", "TUI", "Spotify API", "CLI"],
-      demo: "",
+      demo: "https://www.youtube.com/watch?v=VLUd_-fLCo4",
       github: "https://github.com/vquclinh/console-spotify",
       image: spotifycuiImg,
   },
