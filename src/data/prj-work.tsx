@@ -8,6 +8,7 @@ import flappybirdImg from "../assets/prj-img/flappybird.png"
 import chess3dImg from "../assets/prj-img/chess3D.png"
 import depguardImg from "../assets/prj-img/depguard.png"
 import pulselensImg from "../assets/prj-img/pulselens.png"
+import sim2realImg from "../assets/prj-img/sim2real.png"
 
 // Research
 export const research = [
@@ -43,6 +44,19 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+      id: "p10",
+      title: "Sim2Real-ReID",
+      date: "2026",
+      domain: "AI",
+      section: "featured",
+      description:
+          "Sim2Real-ReID is our submission to the AI City Challenge 2026 (Track 4 — Text-Based Person Anomaly Search), co-hosted with ECCV 2026. Given a natural-language description of a person's behavior, the system retrieves and ranks the top matching images from a gallery of ~36K real-world surveillance photos. The core challenge it is built to solve is the Sim2Real gap: models train on ~1 million synthetic, diffusion-generated image–text pairs from the PAB benchmark, yet must generalize to real-world queries at inference. We implement the AIO (Hybrid, Unified and Iterative) framework, combining a BEiT-3 backbone with a Local-global Hybrid Perspective (LHP) for fine-grained and holistic matching, a Unified Image-Text model (Swin-B + BERT) trained with ITC/ITM/MLM/MIM objectives, a two-stage feature-selection re-ranker, and an iterative ensemble over BLIP-2 and CLIP. The objective is to push retrieval accuracy (mAP, R@1/R@5/R@10) on anomalous-behavior search under heavy domain shift.",
+      tags: ["Python", "PyTorch", "BEiT-3", "Swin Transformer", "BLIP-2", "CLIP", "Vision-Language", "Person Re-ID", "Domain Adaptation", "DeepSpeed", "Computer Vision"],
+      demo: "",
+      github: "https://github.com/vquclinh/Sim2Real-ReID",
+      image: sim2realImg,
+  },
   {
       id: "p0",
       title: "PulseLens",
