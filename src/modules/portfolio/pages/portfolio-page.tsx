@@ -217,6 +217,9 @@ function ProjectCard({ item, onSelect }: { item: Project; onSelect: (modalItem: 
 export function PortfolioPage() {
   const [selectedItem, setSelectedItem] = useState<ProjectModalItem | null>(null);
 
+  const featuredProjects = projects.filter((project) => project.section === "featured");
+  const archiveProjects  = projects.filter((project) => project.section === "archive");
+
   return (
     <div className="min-h-screen bg-zinc-950 text-white">
       <div className="pt-24" />
@@ -237,9 +240,16 @@ export function PortfolioPage() {
         </section>
 
         <section>
-          <SectionLabel>Projects</SectionLabel>
+          <SectionLabel>Featured Work</SectionLabel>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {projects.map((item) => <ProjectCard key={item.id} item={item} onSelect={setSelectedItem} />)}
+            {featuredProjects.map((item) => <ProjectCard key={item.id} item={item} onSelect={setSelectedItem} />)}
+          </div>
+        </section>
+
+        <section>
+          <SectionLabel>Project Archive</SectionLabel>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {archiveProjects.map((item) => <ProjectCard key={item.id} item={item} onSelect={setSelectedItem} />)}
           </div>
         </section>
 
