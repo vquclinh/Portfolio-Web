@@ -1,6 +1,7 @@
 import { ExternalLink, Github, FlaskConical, Bot, Gamepad2, Globe, Layers, Code2, Cpu, ArrowUpRight, AppWindow } from "lucide-react";
-import type { ElementType } from "react";
-import { research, projects, skills, type ProjectDomain } from "../../../data/prj-work";
+import { useState, type ElementType } from "react";
+import { research, projects, skills, type Project, type ProjectDomain } from "../../../data/prj-work";
+import { ProjectModal, type ProjectModalItem } from "../components/ProjectModal";
 
 // Domain config
 const DOMAIN_CONFIG: Record<ProjectDomain, {
@@ -34,10 +35,55 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   );
 }
 
+// Build the normalized modal item from a research entry / project.
+function researchToModalItem(item: (typeof research)[number]): ProjectModalItem {
+  return {
+    title: item.title,
+    date: item.date,
+    description: item.description,
+    image: item.image,
+    tags: item.tags,
+    badge: { label: "Research", icon: FlaskConical, color: "text-cyan-300 bg-cyan-950/70 border-cyan-800/50" },
+    accent: "cyan",
+    github: item.github,
+    paper: item.paper,
+  };
+}
+
+function projectToModalItem(item: Project): ProjectModalItem {
+  const config = DOMAIN_CONFIG[item.domain];
+  return {
+    title: item.title,
+    date: item.date,
+    description: item.description,
+    image: item.image,
+    tags: item.tags,
+    badge: { label: config.label, icon: config.icon, color: config.color },
+    accent: "emerald",
+    demo: item.demo,
+    github: item.github,
+    paper: item.paper,
+  };
+}
+
 // Research Card
-function ResearchCard({ item }: { item: (typeof research)[number] }) {
+function ResearchCard({ item, onSelect }: { item: (typeof research)[number]; onSelect: (modalItem: ProjectModalItem) => void }) {
+  const stop = (e: React.MouseEvent) => e.stopPropagation();
+
   return (
-    <div className="group rounded-xl border border-zinc-800 bg-zinc-900 hover:border-cyan-800/60 transition-all duration-200 overflow-hidden flex flex-col">
+    <div
+      role="button"
+      tabIndex={0}
+      aria-label={`View details for ${item.title}`}
+      onClick={() => onSelect(researchToModalItem(item))}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onSelect(researchToModalItem(item));
+        }
+      }}
+      className="group cursor-pointer rounded-xl border border-zinc-800 bg-zinc-900 hover:border-cyan-800/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-700 transition-all duration-200 overflow-hidden flex flex-col"
+    >
 
       <div className="relative h-50 overflow-hidden bg-zinc-800 shrink-0">
         {item.image && (
@@ -55,6 +101,9 @@ function ResearchCard({ item }: { item: (typeof research)[number] }) {
         </div>
         <span className="absolute top-2.5 right-2.5 text-[10px] text-zinc-100 bg-zinc-900/70 px-2 py-0.5 rounded">
           {item.date}
+        </span>
+        <span className="absolute bottom-2.5 right-2.5 inline-flex items-center gap-1 rounded bg-zinc-900/80 px-2 py-0.5 text-[10px] text-cyan-300 opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200">
+          View details <ArrowUpRight className="w-2.5 h-2.5" />
         </span>
       </div>
 
@@ -74,12 +123,12 @@ function ResearchCard({ item }: { item: (typeof research)[number] }) {
 
         <div className="flex gap-3 pt-3 border-t border-zinc-800">
           {item.paper && (
-            <a href={item.paper} className="flex items-center gap-1 text-xs text-zinc-400 hover:text-cyan-300 transition-colors">
+            <a href={item.paper} target="_blank" rel="noreferrer" onClick={stop} className="flex items-center gap-1 text-xs text-zinc-400 hover:text-cyan-300 transition-colors">
               <ArrowUpRight className="w-3 h-3" /> Paper
             </a>
           )}
           {item.github && (
-            <a href={item.github} className="flex items-center gap-1 text-xs text-zinc-400 hover:text-cyan-300 transition-colors">
+            <a href={item.github} target="_blank" rel="noreferrer" onClick={stop} className="flex items-center gap-1 text-xs text-zinc-400 hover:text-cyan-300 transition-colors">
               <Github className="w-3 h-3" /> Code
             </a>
           )}
@@ -90,12 +139,27 @@ function ResearchCard({ item }: { item: (typeof research)[number] }) {
 }
 
 // Project Card
-function ProjectCard({ item }: { item: (typeof projects)[number] }) {
+function ProjectCard({ item, onSelect }: { item: Project; onSelect: (modalItem: ProjectModalItem) => void }) {
   const config     = DOMAIN_CONFIG[item.domain];
   const DomainIcon = config.icon;
 
+  // Keep the inner links working as direct navigation without triggering the card's detail modal.
+  const stop = (e: React.MouseEvent) => e.stopPropagation();
+
   return (
-    <div className="group rounded-xl border border-zinc-800 bg-zinc-900 hover:border-emerald-900/60 transition-all duration-200 overflow-hidden flex flex-col">
+    <div
+      role="button"
+      tabIndex={0}
+      aria-label={`View details for ${item.title}`}
+      onClick={() => onSelect(projectToModalItem(item))}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onSelect(projectToModalItem(item));
+        }
+      }}
+      className="group cursor-pointer rounded-xl border border-zinc-800 bg-zinc-900 hover:border-emerald-900/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 transition-all duration-200 overflow-hidden flex flex-col"
+    >
 
       <div className="relative h-50 overflow-hidden bg-zinc-800 shrink-0">
         {item.image && (
@@ -113,6 +177,9 @@ function ProjectCard({ item }: { item: (typeof projects)[number] }) {
         </div>
         <span className="absolute top-2.5 right-2.5 text-[10px] text-zinc-100 bg-zinc-900/70 px-2 py-0.5 rounded">
           {item.date}
+        </span>
+        <span className="absolute bottom-2.5 right-2.5 inline-flex items-center gap-1 rounded bg-zinc-900/80 px-2 py-0.5 text-[10px] text-emerald-300 opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200">
+          View details <ArrowUpRight className="w-2.5 h-2.5" />
         </span>
       </div>
 
@@ -132,12 +199,12 @@ function ProjectCard({ item }: { item: (typeof projects)[number] }) {
 
         <div className="flex gap-3 pt-3 border-t border-zinc-800">
           {item.demo && (
-            <a href={item.demo} className="flex items-center gap-1 text-xs text-zinc-400 hover:text-emerald-300 transition-colors">
+            <a href={item.demo} target="_blank" rel="noreferrer" onClick={stop} className="flex items-center gap-1 text-xs text-zinc-400 hover:text-emerald-300 transition-colors">
               <ExternalLink className="w-3 h-3" /> Demo
             </a>
           )}
           {item.github && (
-            <a href={item.github} className="flex items-center gap-1 text-xs text-zinc-400 hover:text-emerald-300 transition-colors">
+            <a href={item.github} target="_blank" rel="noreferrer" onClick={stop} className="flex items-center gap-1 text-xs text-zinc-400 hover:text-emerald-300 transition-colors">
               <Github className="w-3 h-3" /> Code
             </a>
           )}
@@ -148,6 +215,8 @@ function ProjectCard({ item }: { item: (typeof projects)[number] }) {
 }
 
 export function PortfolioPage() {
+  const [selectedItem, setSelectedItem] = useState<ProjectModalItem | null>(null);
+
   return (
     <div className="min-h-screen bg-zinc-950 text-white">
       <div className="pt-24" />
@@ -163,14 +232,14 @@ export function PortfolioPage() {
         <section>
           <SectionLabel>Research</SectionLabel>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {research.map((item) => <ResearchCard key={item.id} item={item} />)}
+            {research.map((item) => <ResearchCard key={item.id} item={item} onSelect={setSelectedItem} />)}
           </div>
         </section>
 
         <section>
           <SectionLabel>Projects</SectionLabel>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {projects.map((item) => <ProjectCard key={item.id} item={item} />)}
+            {projects.map((item) => <ProjectCard key={item.id} item={item} onSelect={setSelectedItem} />)}
           </div>
         </section>
 
@@ -199,6 +268,11 @@ export function PortfolioPage() {
         </section>
 
       </div>
+
+      <ProjectModal
+        item={selectedItem}
+        onClose={() => setSelectedItem(null)}
+      />
     </div>
   );
 }
