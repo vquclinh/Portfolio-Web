@@ -30,6 +30,13 @@ export const research = [
 export type ProjectDomain = "AI" | "Web" | "Game" | "App" | "Tool/Infrastructure" | "App/TUI";
 export type ProjectSection = "featured" | "archive";
 
+export type Competition = {
+  name: string;
+  subtitle: string;
+  short: string;
+  url?: string;
+};
+
 export type Project = {
   id: string;
   title: string;
@@ -42,6 +49,7 @@ export type Project = {
   github: string;
   image: string;
   paper?: string;
+  competition?: Competition;
 };
 
 export const projects: Project[] = [
@@ -57,6 +65,11 @@ export const projects: Project[] = [
       demo: "",
       github: "https://github.com/vquclinh/Sim2Real-ReID",
       image: sim2realImg,
+      competition: {
+          name: "AI City Challenge 2026",
+          subtitle: "Track 4 · Co-hosted with ECCV 2026",
+          short: "ACC 2026",
+      },
   },
   {
       id: "p11",
@@ -65,11 +78,16 @@ export const projects: Project[] = [
       domain: "AI",
       section: "featured",
       description:
-          "FastMCQ Agent is a Vietnamese multiple-choice reasoning system built for the Student HackAIthon 2026 / BTC private-test evaluation and delivered as a Docker image. Rather than a single-shot baseline, it runs a dynamic full-system pipeline: a base predictor first guarantees an answer for every question, a selective router then routes only the hardest, highest-value questions to two API reasoning layers — V12B (option-permutation debiasing that tests answer stability across option orderings) and V13 (multi-layer programmatic, content-first, and least-to-most reasoning) — and a conservative selector merges the candidates, overriding the base answer only when confidence is sufficient. A cost-aware budget (auto = ceil(N/8) questions per layer) caps expensive API calls while the output always covers every input qid. The container reads /data/private_test.csv (or /data/public_test.csv) and writes /output/pred.csv, enforces a competition allowed-model policy (a ≤9B Qwen model via OpenRouter), and ships in two Docker Hub variants — an API-baked image and a safe no-key fallback — with no secret committed to GitHub.",
+          "FastMCQ Agent is a Vietnamese multiple-choice question answering system, built for the Student HackAIthon 2026 (BTC evaluation) to answer open-domain Vietnamese MCQs under a fixed model and compute budget. It is a dynamic full-system reasoning agent rather than a single-shot baseline: a base predictor first answers every question for full coverage, a selective router then sends only the hardest, highest-value questions to two reasoning layers — V12B (option-permutation debiasing) and V13 (multi-layer programmatic, content-first, and least-to-most reasoning) — supported by symbolic/programmatic solvers and an evidence module, and a conservative selector merges all candidates, overriding the base answer only when confident.",
       tags: ["Python", "Docker", "LLM", "OpenRouter", "NLP", "Vietnamese"],
       demo: "",
       github: "https://github.com/vquclinh/FastMCQ-Agent",
       image: fastmcqImg,
+      competition: {
+          name: "Vietnamese Student HackAIthon 2026",
+          subtitle: "BTC Evaluation",
+          short: "HackAIthon 2026",
+      },
   },
   {
       id: "p0",
@@ -83,6 +101,11 @@ export const projects: Project[] = [
       demo: "",
       github: "https://github.com/vquclinh/PulseLens",
       image: pulselensImg,
+      competition: {
+          name: "Web Data UNLOCKED Hackathon",
+          subtitle: "Track 2: Finance & Market Intelligence",
+          short: "Web Data UNLOCKED",
+      },
   },
   { 
       id: "p1",

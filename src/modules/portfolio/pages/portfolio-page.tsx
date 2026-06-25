@@ -1,4 +1,4 @@
-import { ExternalLink, Github, FlaskConical, Bot, Gamepad2, Globe, Layers, Code2, Cpu, ArrowUpRight, AppWindow } from "lucide-react";
+import { ExternalLink, Github, FlaskConical, Bot, Gamepad2, Globe, Layers, Code2, Cpu, ArrowUpRight, AppWindow, Trophy } from "lucide-react";
 import { useState, type ElementType } from "react";
 import { research, projects, skills, type Project, type ProjectDomain } from "../../../data/prj-work";
 import { ProjectModal, type ProjectModalItem } from "../components/ProjectModal";
@@ -145,6 +145,7 @@ function ProjectCard({ item, onSelect }: { item: Project; onSelect: (modalItem: 
 
   // Keep the inner links working as direct navigation without triggering the card's detail modal.
   const stop = (e: React.MouseEvent) => e.stopPropagation();
+  const comp = item.competition;
 
   return (
     <div
@@ -158,8 +159,9 @@ function ProjectCard({ item, onSelect }: { item: Project; onSelect: (modalItem: 
           onSelect(projectToModalItem(item));
         }
       }}
-      className="group cursor-pointer rounded-xl border border-zinc-800 bg-zinc-900 hover:border-emerald-900/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 transition-all duration-200 overflow-hidden flex flex-col"
+      className={`group relative cursor-pointer rounded-xl border border-zinc-800 bg-zinc-900 hover:border-emerald-900/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 transition-all duration-200 overflow-hidden flex flex-col${comp ? " has-competition" : ""}`}
     >
+      <span className="competition-rail" aria-hidden="true" />
 
       <div className="relative h-50 overflow-hidden bg-zinc-800 shrink-0">
         {item.image && (
@@ -183,9 +185,33 @@ function ProjectCard({ item, onSelect }: { item: Project; onSelect: (modalItem: 
         </span>
       </div>
 
+      {comp && (
+        <div className="competition-passport px-4 py-1.5" aria-label={`Competition: ${comp.name}`}>
+          <div className="competition-passport__short flex items-center gap-2 min-w-0">
+            <Trophy className="w-3 h-3 shrink-0 text-teal-300" />
+            <span className="text-[11px] font-semibold text-teal-200 whitespace-nowrap">{comp.short}</span>
+            <span className="hidden sm:block text-[10px] text-zinc-400 truncate">{comp.subtitle}</span>
+          </div>
+          <div className="competition-passport__full">
+            <div>
+              <p className="text-[11px] font-medium text-teal-100 truncate">{comp.name}</p>
+              <p className="text-[10px] text-zinc-300/90 truncate">{comp.subtitle}</p>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="p-5 flex flex-col flex-1 gap-3">
         <div>
-          <h3 className="text-sm font-semibold text-white mb-2 group-hover:text-emerald-300 transition-colors duration-200">{item.title}</h3>
+          <div className="flex items-center flex-wrap gap-2 mb-2">
+            <h3 className="text-sm font-semibold text-white group-hover:text-emerald-300 transition-colors duration-200">{item.title}</h3>
+            {comp && (
+              <span className="competition-pill" aria-label={`Competition entry: ${comp.name}`}>
+                <Trophy className="w-2.5 h-2.5" aria-hidden="true" />
+                {comp.short}
+              </span>
+            )}
+          </div>
           <p className="text-xs text-zinc-300 leading-relaxed line-clamp-5">{item.description}</p>
         </div>
 

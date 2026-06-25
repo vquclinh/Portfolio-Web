@@ -203,3 +203,136 @@
     opacity: 0;
   }
 }
+
+/* ───────────────────────────────────────────────────────────
+   Competition Passport Strip + Neon Identity Rail
+   Applied only to cards with .has-competition. CSS-based to
+   match the existing card (Tailwind transitions, no Framer Motion).
+   ─────────────────────────────────────────────────────────── */
+
+/* Left-edge neon data rail with a vertical scanner dot */
+.competition-rail {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 2.5px;
+  z-index: 2;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    rgba(45, 212, 191, 0) 0%,
+    rgba(45, 212, 191, 0.55) 25%,
+    rgba(168, 85, 247, 0.55) 70%,
+    rgba(45, 212, 191, 0) 100%
+  );
+  opacity: 0.7;
+  transition: opacity 0.25s ease;
+}
+.group:hover .competition-rail {
+  opacity: 1;
+}
+.competition-rail::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -25%;
+  width: 2.5px;
+  height: 26px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, transparent, #5eead4, #c084fc, transparent);
+  box-shadow: 0 0 8px 1px rgba(94, 234, 212, 0.75);
+  animation: competition-scan 3.4s ease-in-out infinite;
+}
+@keyframes competition-scan {
+  0%   { top: -25%; opacity: 0; }
+  12%  { opacity: 1; }
+  88%  { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+/* Glassy neon competition pill (sits next to the title) */
+.competition-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  color: #99f6e4;
+  background: linear-gradient(135deg, rgba(20, 184, 166, 0.2), rgba(147, 51, 234, 0.2));
+  border: 1px solid rgba(94, 234, 212, 0.35);
+  box-shadow: inset 0 0 0 1px rgba(94, 234, 212, 0.06), 0 0 10px rgba(45, 212, 191, 0.14);
+  backdrop-filter: blur(4px);
+}
+
+/* Holographic credential strip below the thumbnail */
+.competition-passport {
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(45, 212, 191, 0.2);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.14);
+  background: linear-gradient(
+    90deg,
+    rgba(13, 148, 136, 0.14) 0%,
+    rgba(76, 29, 149, 0.12) 55%,
+    rgba(13, 148, 136, 0.07) 100%
+  );
+  backdrop-filter: blur(6px);
+}
+/* Soft holographic sweep on hover */
+.competition-passport::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    110deg,
+    transparent 32%,
+    rgba(94, 234, 212, 0.18) 46%,
+    rgba(192, 132, 252, 0.18) 54%,
+    transparent 68%
+  );
+  transform: translateX(-130%);
+  transition: transform 0.9s ease;
+}
+.group:hover .competition-passport::before {
+  transform: translateX(130%);
+}
+
+/* Collapsed → expanded reveal of the full event name + subtitle */
+.competition-passport__full {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  margin-top: 0;
+  transition: grid-template-rows 0.35s ease, opacity 0.3s ease, margin-top 0.35s ease;
+}
+.competition-passport__full > div {
+  min-height: 0;
+  overflow: hidden;
+}
+.group:hover .competition-passport__full,
+.group:focus-within .competition-passport__full {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  margin-top: 4px;
+}
+
+/* Accessibility: respect reduced-motion — kill scanner/sweep, keep static styling */
+@media (prefers-reduced-motion: reduce) {
+  .competition-rail::after {
+    animation: none;
+    top: 38%;
+    opacity: 0.85;
+  }
+  .competition-passport::before {
+    transition: none;
+  }
+  .competition-passport__full {
+    transition: opacity 0.2s ease;
+  }
+}
