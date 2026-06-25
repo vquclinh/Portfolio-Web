@@ -9,6 +9,7 @@ import chess3dImg from "../assets/prj-img/chess3D.png"
 import depguardImg from "../assets/prj-img/depguard.png"
 import pulselensImg from "../assets/prj-img/pulselens.png"
 import sim2realImg from "../assets/prj-img/sim2real.png"
+import fastmcqImg from "../assets/prj-img/fastmcq.png"
 
 // Research
 export const research = [
@@ -56,6 +57,19 @@ export const projects: Project[] = [
       demo: "",
       github: "https://github.com/vquclinh/Sim2Real-ReID",
       image: sim2realImg,
+  },
+  {
+      id: "p11",
+      title: "FastMCQ Agent",
+      date: "2026",
+      domain: "AI",
+      section: "featured",
+      description:
+          "FastMCQ Agent is a Vietnamese multiple-choice reasoning system built for the Student HackAIthon 2026 / BTC private-test evaluation and delivered as a Docker image. Rather than a single-shot baseline, it runs a dynamic full-system pipeline: a base predictor first guarantees an answer for every question, a selective router then routes only the hardest, highest-value questions to two API reasoning layers — V12B (option-permutation debiasing that tests answer stability across option orderings) and V13 (multi-layer programmatic, content-first, and least-to-most reasoning) — and a conservative selector merges the candidates, overriding the base answer only when confidence is sufficient. A cost-aware budget (auto = ceil(N/8) questions per layer) caps expensive API calls while the output always covers every input qid. The container reads /data/private_test.csv (or /data/public_test.csv) and writes /output/pred.csv, enforces a competition allowed-model policy (a ≤9B Qwen model via OpenRouter), and ships in two Docker Hub variants — an API-baked image and a safe no-key fallback — with no secret committed to GitHub.",
+      tags: ["Python", "Docker", "LLM", "OpenRouter", "NLP", "Vietnamese"],
+      demo: "",
+      github: "https://github.com/vquclinh/FastMCQ-Agent",
+      image: fastmcqImg,
   },
   {
       id: "p0",
@@ -182,4 +196,5 @@ export const skills = [
   "React", "TypeScript", "Tailwind CSS", "UI/UX Design", "Figma", "HTML/CSS",
   "Python", "Rust", "C/C++", "Node.js", "FastAPI", "REST API", "System Design",
   "PyTorch", "LangChain", "LangGraph", "Git", "Docker", "Linux",
+  "OpenRouter",
 ];
