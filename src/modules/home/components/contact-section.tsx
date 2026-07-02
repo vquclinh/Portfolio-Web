@@ -56,7 +56,7 @@ export function ContactSection() {
                   <span className="text-sm">Vo Quoc Linh</span>
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/linh-v%C3%B5-qu%E1%BB%91c-0132a232a/"
+                  href="https://www.linkedin.com/in/vquclinh/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-zinc-400 hover:text-white transition-colors group"
