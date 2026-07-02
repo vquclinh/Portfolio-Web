@@ -27,7 +27,7 @@ export function ContactSection() {
                   <span className="text-sm">voquoclinh.29042006@gmail.com</span>
                 </a>
                 <a
-                  href="tel:+84398695132"
+                  href="tel:+84775502127"
                   className="flex items-center gap-3 text-zinc-400 hover:text-white transition-colors group"
                 >
                   <Phone className="w-4 h-4 text-zinc-600 group-hover:text-white shrink-0 transition-colors" />
