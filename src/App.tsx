@@ -7,6 +7,7 @@ import HomePage from './modules/home';
 import PortfolioPage from './modules/portfolio';
 import TimelinePage from './modules/timeline';
 import MemoriesPage from './modules/memories';
+import CVPage from './modules/cv';
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
             <Route element={<MainLayout />}>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/portfolio" element={<PortfolioPage />} />
+                <Route path="/cv" element={<CVPage />} />
                 <Route path="/timeline" element={<TimelinePage />} />
                 <Route path="/memories" element={<MemoriesPage />} />
                 <Route path="*" element={<HomePage />} />

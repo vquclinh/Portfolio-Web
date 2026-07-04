@@ -1,10 +1,11 @@
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Home, Briefcase, Heart, Clock } from 'lucide-react';
+import { Home, Briefcase, Heart, Clock, FileText } from 'lucide-react';
 import { useRef, useEffect, useState } from 'react';
 
 const navItems = [
   { path: '/', label: 'Home', icon: Home },
   { path: '/portfolio', label: 'Portfolio', icon: Briefcase },
+  { path: '/cv', label: 'CV', icon: FileText },
   { path: '/memories', label: 'Memories', icon: Heart },
   { path: '/timeline', label: 'Timeline', icon: Clock },
 ];
@@ -84,6 +85,7 @@ export function NavBar() {
                 key={item.path}
                 ref={(el) => { desktopRefs.current[i] = el; }}
                 onClick={() => navigate(item.path)}
+                aria-label={item.label}
                 className={`relative flex items-center gap-2 px-5 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
                   active ? 'text-black' : 'text-zinc-400 hover:text-white hover:bg-zinc-800'
                 }`}
@@ -119,6 +121,7 @@ export function NavBar() {
                 key={item.path}
                 ref={(el) => { mobileRefs.current[i] = el; }}
                 onClick={() => navigate(item.path)}
+                aria-label={item.label}
                 className={`relative flex items-center gap-1.5 px-3 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
                   active ? 'text-black' : 'text-zinc-400 hover:text-white hover:bg-zinc-800'
                 }`}
