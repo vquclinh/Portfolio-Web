@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { ArrowRight, FileText } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/shared/components/ui/button";
 import { ImageWithFallback } from "@/shared/components/ui/image-with-fallback";
 import avatar from "@/assets/avatar.jpg";
@@ -72,16 +72,6 @@ export function HeroSection() {
               <Button size="lg" className="bg-zinc-800 hover:bg-zinc-700 text-white border border-zinc-700 shadow-lg shadow-black/50">
                 View My Work
                 <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-            </Link>
-            <Link to="/cv">
-              <Button
-                variant="outline"
-                size="lg"
-                className="bg-white text-black border-white hover:bg-zinc-200 hover:text-black shadow-lg shadow-black/40"
-              >
-                View CV
-                <FileText className="ml-2 w-4 h-4" />
               </Button>
             </Link>
             <a href="#contact" onClick={handleScrollToContact}>
