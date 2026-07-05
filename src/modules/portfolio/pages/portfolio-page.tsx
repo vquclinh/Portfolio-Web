@@ -86,12 +86,18 @@ function ResearchCard({ item, onSelect }: { item: (typeof research)[number]; onS
     >
 
       <div className="relative h-50 overflow-hidden bg-zinc-800 shrink-0">
-        {item.image && (
+        {item.image ? (
           <img
             src={item.image}
             alt={item.title}
             className="w-full h-full object-cover opacity-100 group-hover:opacity-80 group-hover:scale-[1.08] transition-all duration-500"
           />
+        ) : (
+          <div className="flex h-full w-full items-center justify-center border-b border-cyan-900/30 bg-[radial-gradient(circle_at_center,#164e63_0%,#18181b_58%)] px-4 text-center">
+            <span className="relative z-10 rounded border border-cyan-700/50 bg-zinc-950/70 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">
+              Not public yet!
+            </span>
+          </div>
         )}
         <div className="absolute top-2.5 left-2.5">
           <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] border font-medium text-cyan-300 bg-cyan-950/70 border-cyan-800/50">

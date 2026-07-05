@@ -65,12 +65,18 @@ export function ProjectModal({ item, onClose }: ProjectModalProps) {
         {item && BadgeIcon && (
           <>
             <div className="relative h-56 w-full shrink-0 overflow-hidden bg-zinc-800">
-              {item.image && (
+              {item.image ? (
                 <img
                   src={item.image}
                   alt={item.title}
                   className="h-full w-full object-cover"
                 />
+              ) : (
+                <div className="flex h-full w-full items-center justify-center bg-[radial-gradient(circle_at_center,#164e63_0%,#18181b_58%)] px-4 text-center">
+                  <span className="relative z-10 rounded border border-cyan-700/50 bg-zinc-950/70 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">
+                    Not public yet!
+                  </span>
+                </div>
               )}
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/20 to-transparent" />
               <span

@@ -1,4 +1,3 @@
-import lawdisImg from "../assets/prj-img/lawdis.png";
 import localfoodImg from "../assets/prj-img/local-food.png"
 import spotifycuiImg from "../assets/prj-img/spotify-cui.png"
 import datastrucImg from "../assets/prj-img/datastructurevis.png"
@@ -21,8 +20,8 @@ export const research = [
          "Building on LawDIS, we integrate a depth-conditioned classifier guidance model into the diffusion inference pipeline at each denoising step, improving fine-grained boundary detection in dichotomous image segmentation.",
       tags: ["Python", "PyTorch", "Diffusion", "Segmentation", "Depth Map", "Computer Vision"],
       paper: "",
-      github: "https://github.com/vquclinh/GuideDIS",
-      image: lawdisImg,
+      github: "",
+      image: "",
    },
 ];
 
