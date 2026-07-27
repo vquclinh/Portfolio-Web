@@ -8,6 +8,13 @@ function TimelineCard({ event }: { event: TimelineEvent }) {
       </p>
       <div className="mb-3 h-px bg-zinc-700" />
       <p className="text-base leading-relaxed text-zinc-300">{event.description}</p>
+      {event.details && event.details.length > 0 && (
+        <ul className="mt-3 list-disc space-y-1 pl-5 text-sm leading-relaxed text-zinc-400">
+          {event.details.map((detail) => (
+            <li key={detail}>{detail}</li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
