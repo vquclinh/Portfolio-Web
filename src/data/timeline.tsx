@@ -9,7 +9,7 @@ export const timelineEvents: TimelineEvent[] = [
   {
     id: "t7",
     date: "23/07/2026",
-    description: "Third Prize (top 3)",
+    description: "Third Prize (Top 3) - Vietnamese Student HackAIthon",
     details: ["Awarded by the Vietnam Student Association"],
   },
   {
@@ -31,21 +31,25 @@ export const timelineEvents: TimelineEvent[] = [
     id: "t5",
     date: "03/2024",
     description: "Third Prize — National Mathematics Gifted Student Competition",
+    details: ["Awarded by the Ministry of Education and Training of Vietnam"],
   },
   {
     id: "t4",
     date: "05/2023",
     description: "Bronze Medal — Vietnam Mathematical Olympiad for Students",
+    details: ["Awarded by the Vietnam Institute for Advanced Study in Mathematics (VIASM)"],
   },
   {
     id: "t3",
     date: "07/2022",
     description: "Silver Medal — Coastal and Red River Delta Mathematical Olympiad",
+    details: ["Awarded by the Coastal and Red River Delta Specialized High Schools Association"],
   },
   {
     id: "t2",
     date: "05/2022",
     description: "Consolation Prize — Vietnam Mathematical Olympiad for Students",
+    details: ["Awarded by the Vietnam Institute for Advanced Study in Mathematics (VIASM)"],
   },
   {
     id: "t1",
