@@ -8,9 +8,14 @@ export type TimelineEvent = {
 export const timelineEvents: TimelineEvent[] = [
   {
     id: "t7",
-    date: "07/2026",
-    description: "Third Prize (Top 3) - Vietnamese Student HackAIthon",
+    date: "23/07/2026",
+    description: "Third Prize (top 3)",
     details: ["Awarded by the Vietnam Student Association"],
+  },
+  {
+    id: "t9",
+    date: "06/2026",
+    description: "Participated in Vietnamese Student HackAIthon",
   },
   {
     id: "t8",
