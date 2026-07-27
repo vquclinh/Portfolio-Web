@@ -13,6 +13,11 @@ export const timelineEvents: TimelineEvent[] = [
     details: ["Awarded by the Vietnam Student Association"],
   },
   {
+    id: "t8",
+    date: "05/2026",
+    description: "Participated in GDGs On Campus - Hackathon Vietnam 2026",
+  },
+  {
     id: "t6",
     date: "09/2025",
     description: "Began studying Advanced Program in Computer Science at University of Science - VNU",
