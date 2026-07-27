@@ -1,15 +1,49 @@
 import { timelineEvents, type TimelineEvent } from "../../../data/timeline";
+import { cn } from "../../../shared/lib/utils";
 
 function TimelineCard({ event }: { event: TimelineEvent }) {
+  const isAwarded = event.details?.some((detail) =>
+    detail.toLowerCase().startsWith("awarded by"),
+  );
+
   return (
-    <div className="w-full rounded-xl border border-zinc-700 bg-zinc-900 p-4 transition-all duration-200 hover:border-zinc-500 hover:bg-zinc-800/80 md:max-w-xs">
-      <p className="mb-2 text-base font-semibold tracking-wide text-zinc-200">
+    <div
+      className={cn(
+        "w-full rounded-xl border bg-zinc-900 p-4 transition-all duration-200 md:max-w-xs",
+        isAwarded
+          ? "border-amber-500/70 bg-gradient-to-br from-amber-950/35 via-zinc-900 to-zinc-900 shadow-[0_0_0_1px_rgba(245,158,11,0.12),0_18px_40px_rgba(245,158,11,0.12)] hover:border-amber-400/80 hover:from-amber-950/45"
+          : "border-zinc-700 hover:border-zinc-500 hover:bg-zinc-800/80",
+      )}
+    >
+      <p
+        className={cn(
+          "mb-2 text-base font-semibold tracking-wide",
+          isAwarded ? "text-amber-200" : "text-zinc-200",
+        )}
+      >
         {event.date}
       </p>
-      <div className="mb-3 h-px bg-zinc-700" />
-      <p className="text-base leading-relaxed text-zinc-300">{event.description}</p>
+      <div
+        className={cn(
+          "mb-3 h-px",
+          isAwarded ? "bg-amber-500/35" : "bg-zinc-700",
+        )}
+      />
+      <p
+        className={cn(
+          "text-base leading-relaxed",
+          isAwarded ? "text-zinc-100" : "text-zinc-300",
+        )}
+      >
+        {event.description}
+      </p>
       {event.details && event.details.length > 0 && (
-        <ul className="mt-3 list-disc space-y-1 pl-5 text-sm leading-relaxed text-zinc-400">
+        <ul
+          className={cn(
+            "mt-3 list-disc space-y-1 pl-5 text-sm leading-relaxed",
+            isAwarded ? "text-amber-100/80 marker:text-amber-300" : "text-zinc-400",
+          )}
+        >
           {event.details.map((detail) => (
             <li key={detail}>{detail}</li>
           ))}
