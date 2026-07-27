@@ -264,12 +264,14 @@ export function PortfolioPage() {
           <div className="mt-4 h-px w-16 bg-gradient-to-r from-zinc-400 to-transparent" />
         </div>
 
-        <section>
-          <SectionLabel>Research</SectionLabel>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {research.map((item) => <ResearchCard key={item.id} item={item} onSelect={setSelectedItem} />)}
-          </div>
-        </section>
+        {research.length > 0 && (
+          <section>
+            <SectionLabel>Research</SectionLabel>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {research.map((item) => <ResearchCard key={item.id} item={item} onSelect={setSelectedItem} />)}
+            </div>
+          </section>
+        )}
 
         <section>
           <SectionLabel>Featured Work</SectionLabel>

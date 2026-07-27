@@ -11,19 +11,18 @@ import sim2realImg from "../assets/prj-img/sim2real.png"
 import fastmcqImg from "../assets/prj-img/fastmcq.png"
 
 // Research
-export const research = [
-   {
-      id: "r1",
-      title: "Depth-Guided Classifier Guidance for Dichotomous Image Segmentation",
-      date: "2026",
-      description:
-         "Building on LawDIS, we integrate a depth-conditioned classifier guidance model into the diffusion inference pipeline at each denoising step, improving fine-grained boundary detection in dichotomous image segmentation.",
-      tags: ["Python", "PyTorch", "Diffusion", "Segmentation", "Depth Map", "Computer Vision"],
-      paper: "",
-      github: "",
-      image: "",
-   },
-];
+export type Research = {
+  id: string;
+  title: string;
+  date: string;
+  description: string;
+  tags: string[];
+  paper: string;
+  github: string;
+  image: string;
+};
+
+export const research: Research[] = [];
 
 // Projects
 export type ProjectDomain = "AI" | "Web" | "Game" | "App" | "Tool/Infrastructure" | "App/TUI";
