@@ -118,19 +118,6 @@ export const projects: Project[] = [
       github: "https://github.com/vquclinh/DepGuard-AI",
       image: depguardImg,
   },
-  {   
-      id: "p2",
-      title: "Smart Food Tour Assistant",
-      date: "2025",
-      domain: "AI",
-      section: "featured",
-      description:
-         "Local Food is an AI-powered web application that helps travelers discover and enjoy the authentic culinary scene of Ho Chi Minh City. Built on a Multi-Agent System, it uses a Supervisor Agent to route requests to specialized agents — a Food Finder, a Location Expert, and an Itinerary Synthesizer — that together craft personalized, day-by-day food tours. The objective is to connect food lovers with genuine local vendors and hidden gems that ordinary guides overlook, with an interactive map, multilingual support (English & Vietnamese), and customizable schedules. Its broader impact is to promote HCMC's culinary tourism, boost small family-run eateries, and preserve traditional Saigonese food culture.",
-      tags: ["Multi-Agent", "RAG", "React", "TypeScript", "Supabase", "LLM", "UI/UX"],
-      demo: "https://www.youtube.com/watch?v=vMBRyovw7f8&t=39s",
-      github: "https://github.com/namkiet/CS252-Web-Project-Group-XXX",
-      image: localfoodImg,
-  },
   {
       id: "p3",
       title: "Spotify Console UI (Spotty)",
@@ -143,6 +130,19 @@ export const projects: Project[] = [
       demo: "https://www.youtube.com/watch?v=VLUd_-fLCo4",
       github: "https://github.com/vquclinh/console-spotify",
       image: spotifycuiImg,
+  },
+  {   
+      id: "p2",
+      title: "Smart Food Tour Assistant",
+      date: "2025",
+      domain: "AI",
+      section: "archive",
+      description:
+         "Local Food is an AI-powered web application that helps travelers discover and enjoy the authentic culinary scene of Ho Chi Minh City. Built on a Multi-Agent System, it uses a Supervisor Agent to route requests to specialized agents — a Food Finder, a Location Expert, and an Itinerary Synthesizer — that together craft personalized, day-by-day food tours. The objective is to connect food lovers with genuine local vendors and hidden gems that ordinary guides overlook, with an interactive map, multilingual support (English & Vietnamese), and customizable schedules. Its broader impact is to promote HCMC's culinary tourism, boost small family-run eateries, and preserve traditional Saigonese food culture.",
+      tags: ["Multi-Agent", "RAG", "React", "TypeScript", "Supabase", "LLM", "UI/UX"],
+      demo: "https://www.youtube.com/watch?v=vMBRyovw7f8&t=39s",
+      github: "https://github.com/namkiet/CS252-Web-Project-Group-XXX",
+      image: localfoodImg,
   },
   {
       id: "p7",
