@@ -25,9 +25,14 @@ import math7 from "../assets/memories/mathteam/team7.jpg"
 import math8 from "../assets/memories/mathteam/team8.jpg"
 import math9 from "../assets/memories/mathteam/team9.jpg"
 
+import hackaithon1 from "../assets/memories/hackaithon/hackaithon1.jpg"
+import hackaithon2 from "../assets/memories/hackaithon/hackaithon2.jpg"
+import hackaithon3 from "../assets/memories/hackaithon/hackaithon3.jpg"
+import hackaithon4 from "../assets/memories/hackaithon/hackaithon4.jpg"
+import hackaithon5 from "../assets/memories/hackaithon/hackaithon5.jpg"
+import hackaithon6 from "../assets/memories/hackaithon/hackaithon6.jpg"
 
-
-export type MemoryCategory = "Scholarship" | "Math Team" | "University" | "12T1 - Le Khiet High School for The Gifted" | "Life";
+export type MemoryCategory = "Scholarship" | "Math Team" | "University" | "12T1 - Le Khiet High School for The Gifted" | "Life" | "Vietnamese Student HackAIthon";
 
 export type Memory = {
   id: string;
@@ -52,16 +57,23 @@ export const memories: Memory[] = [
   { id: "m5", date: "2025", category: "Math Team", image: math8   },
   { id: "m5", date: "2025", category: "Math Team", image: math9   },
 
-  { id: "h1", date: "2025", category: "12T1 - Le Khiet High School for The Gifted", image: a1},
-  { id: "h2", date: "2025", category: "12T1 - Le Khiet High School for The Gifted", image: a2},
-  { id: "h3", date: "2025", category: "12T1 - Le Khiet High School for The Gifted", image: a3},
-  { id: "h4", date: "2025", category: "12T1 - Le Khiet High School for The Gifted", image: a4},
-  { id: "h5", date: "2025", category: "12T1 - Le Khiet High School for The Gifted", image: a5},
-  { id: "h6", date: "2025", category: "12T1 - Le Khiet High School for The Gifted", image: a6},
-  { id: "h7", date: "2025", category: "12T1 - Le Khiet High School for The Gifted", image: a7},
-  { id: "h8", date: "2025", category: "12T1 - Le Khiet High School for The Gifted", image: a8},
-  { id: "m9", date: "2025", category: "12T1 - Le Khiet High School for The Gifted", image: a9},
-  { id: "m19", date: "2025", category: "12T1 - Le Khiet High School for The Gifted", image: mama},
-  { id: "m20", date: "2025", category: "12T1 - Le Khiet High School for The Gifted", image: reve}
+  { id: "h1", date: "2025", category: "12T1 - Le Khiet High School for The Gifted", image: a1 },
+  { id: "h2", date: "2025", category: "12T1 - Le Khiet High School for The Gifted", image: a2 },
+  { id: "h3", date: "2025", category: "12T1 - Le Khiet High School for The Gifted", image: a3 },
+  { id: "h4", date: "2025", category: "12T1 - Le Khiet High School for The Gifted", image: a4 },
+  { id: "h5", date: "2025", category: "12T1 - Le Khiet High School for The Gifted", image: a5 },
+  { id: "h6", date: "2025", category: "12T1 - Le Khiet High School for The Gifted", image: a6 },
+  { id: "h7", date: "2025", category: "12T1 - Le Khiet High School for The Gifted", image: a7 },
+  { id: "h8", date: "2025", category: "12T1 - Le Khiet High School for The Gifted", image: a8 },
+  { id: "m9", date: "2025", category: "12T1 - Le Khiet High School for The Gifted", image: a9 },
+  { id: "m19", date: "2025", category: "12T1 - Le Khiet High School for The Gifted", image: mama },
+  { id: "m20", date: "2025", category: "12T1 - Le Khiet High School for The Gifted", image: reve },
+
+  { id: "h1", date: "2026", category: "Vietnamese Student HackAIthon", image: hackaithon1 },
+  { id: "h2", date: "2026", category: "Vietnamese Student HackAIthon", image: hackaithon2 },
+  { id: "h3", date: "2026", category: "Vietnamese Student HackAIthon", image: hackaithon3 },
+  { id: "h4", date: "2026", category: "Vietnamese Student HackAIthon", image: hackaithon4 },
+  { id: "h5", date: "2026", category: "Vietnamese Student HackAIthon", image: hackaithon5 },
+  { id: "h6", date: "2026", category: "Vietnamese Student HackAIthon", image: hackaithon6 },
 
 ];
