@@ -10,6 +10,7 @@ import pulselensImg from "../assets/prj-img/pulselens.png"
 import sim2realImg from "../assets/prj-img/sim2real.png"
 import fastmcqImg from "../assets/prj-img/fastmcq.png"
 import codeCupImg from "../assets/prj-img/codecup.png"
+import mednormImg from "../assets/prj-img/mednorm.png"
 
 // Research
 export type Research = {
@@ -52,7 +53,7 @@ export type Project = {
 };
 
 export const projects: Project[] = [
-    {
+    {   
         id: "p10",
         title: "Sim2Real-ReID",
         date: "2026",
@@ -86,6 +87,24 @@ export const projects: Project[] = [
             name: "Vietnamese Student HackAIthon 2026",
             subtitle: "BTC Evaluation",
             short: "HackAIthon 2026",
+        },
+    },
+    {
+        id: "p12",
+        title: "MedNorm-VI",
+        date: "2026",
+        domain: "AI",
+        section: "featured",
+        description:
+            "MedNorm-VI is a Vietnamese clinical information extraction and ontology normalization system, built for the Viettel AI Race 2026 (Track 2) to read clinical notes and emit structured entities, clinical assertions, and governed ICD-10 / RxNorm codes under a hard 9B deployed-parameter ceiling. It runs four frozen open-weight models fully offline — Qwen3-8B, SapBERT-XLMR, ClinLinker-KB-GP and a ViHealthBERT mention expert, 8.73B parameters total — with no external API and no training at run time. Extraction fuses three proposal sources (the mention expert, three specialized Qwen passes, and governed alias matches) into a finite span lattice that a constrained verifier accepts, rejects or retypes by index, followed by deterministic span resolution and a clause-scoped assertion pass. Linking then reformulates each mention into multiple query views, retrieves small diversified candidate sets via sparse character n-grams and two biomedical encoders, prunes on evidenced ontology conflicts, and lets a set-wise reranker choose one governed concept or explicitly NONE. Two failure modes are structurally impossible rather than merely unlikely: the model never emits a character offset, so every span is a literal slice of the source, and never emits a code, so every candidate comes from the governed knowledge base.",
+        tags: ["Python", "PyTorch", "LLM", "NLP", "Entity Linking", "Vietnamese"],
+        demo: "",
+        github: "https://github.com/vquclinh/MedNorm-VI",
+        image: mednormImg,
+        competition: {
+            name: "Viettel AI Race 2026",
+            subtitle: "Track 2",
+            short: "Ontological Reasoning in Medical Knowledge Retrieval",
         },
     },
     {
