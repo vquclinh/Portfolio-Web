@@ -102,9 +102,9 @@ export const projects: Project[] = [
         github: "https://github.com/vquclinh/MedNorm-VI",
         image: mednormImg,
         competition: {
-            name: "Viettel AI Race 2026",
+            name: "Ontological Reasoning in Medical Knowledge Retrieval",
             subtitle: "Track 2",
-            short: "Ontological Reasoning in Medical Knowledge Retrieval",
+            short: "Viettel AI Race 2026",
         },
     },
     {
