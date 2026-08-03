@@ -7,15 +7,15 @@ export type TimelineEvent = {
 
 export const timelineEvents: TimelineEvent[] = [
   {
+    id: "t10",
+    date: "05/08/2026",
+    description: "Top 30 Track 2 Viettel AI Race",
+  },
+  {
     id: "t7",
     date: "23/07/2026",
     description: "Third Prize (Top 3) - Vietnamese Student HackAIthon",
     details: ["Awarded by the Vietnam Student Association"],
-  },
-  {
-    id: "t9",
-    date: "06/2026",
-    description: "Participated in Vietnamese Student HackAIthon",
   },
   {
     id: "t8",
