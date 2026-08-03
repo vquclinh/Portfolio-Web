@@ -9,7 +9,7 @@ export const timelineEvents: TimelineEvent[] = [
   {
     id: "t10",
     date: "05/08/2026",
-    description: "Top 30 Track 2 Viettel AI Race",
+    description: "Top 30 - Track 2 Viettel AI Race",
   },
   {
     id: "t7",
