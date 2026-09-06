@@ -1,11 +1,21 @@
 export type TimelineEvent = {
   id: string;
   date: string;
-  description: string;
+  description: string | string[];
   details?: string[];
+  highlight?: boolean;
 };
 
 export const timelineEvents: TimelineEvent[] = [
+  {
+    id: "t11",
+    date: "01/09/2026",
+    description: [
+      "Top 10 - AKBC Shared Task 2026",
+      "Paper accepted for the AKBC Workshop @ EMNLP 2026",
+    ],
+    highlight: true,
+  },
   {
     id: "t10",
     date: "05/08/2026",

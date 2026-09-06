@@ -2,9 +2,10 @@ import { timelineEvents, type TimelineEvent } from "../../../data/timeline";
 import { cn } from "../../../shared/lib/utils";
 
 function TimelineCard({ event }: { event: TimelineEvent }) {
-  const isAwarded = event.details?.some((detail) =>
-    detail.toLowerCase().startsWith("awarded by"),
-  );
+  const isAwarded =
+    event.highlight ||
+    event.details?.some((detail) => detail.toLowerCase().startsWith("awarded by"));
+  const lines = Array.isArray(event.description) ? event.description : [event.description];
 
   return (
     <div
@@ -29,14 +30,16 @@ function TimelineCard({ event }: { event: TimelineEvent }) {
           isAwarded ? "bg-amber-500/35" : "bg-zinc-700",
         )}
       />
-      <p
+      <div
         className={cn(
-          "text-base leading-relaxed",
+          "space-y-1 text-base leading-relaxed",
           isAwarded ? "text-zinc-100" : "text-zinc-300",
         )}
       >
-        {event.description}
-      </p>
+        {lines.map((line) => (
+          <p key={line}>{line}</p>
+        ))}
+      </div>
       {event.details && event.details.length > 0 && (
         <ul
           className={cn(

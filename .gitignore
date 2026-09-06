@@ -33,3 +33,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# local source material (raw paper assets, not shipped)
+project-new/

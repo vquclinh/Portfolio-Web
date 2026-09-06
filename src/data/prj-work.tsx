@@ -12,19 +12,28 @@ import fastmcqImg from "../assets/prj-img/fastmcq.png"
 import codeCupImg from "../assets/prj-img/codecup.png"
 import mednormImg from "../assets/prj-img/mednorm.png"
 
-// Research
-export type Research = {
+// Publications
+export type Publication = {
   id: string;
   title: string;
   date: string;
-  description: string;
-  tags: string[];
-  paper: string;
-  github: string;
-  image: string;
+  authors: string;
+  venue: string;
+  venueTag?: string;
+  paperUrl?: string;
+  proceedingsUrl?: string;
 };
 
-export const research: Research[] = [];
+export const publications: Publication[] = [
+    {
+        id: "cover-kbc",
+        title: "COVER-KBC: Evidence-Centric Adaptive Inference for Closed-Book Knowledge Base Construction",
+        date: "2026",
+        authors: "Quoc-Linh Vo",
+        venue: "AKBC Workshop @ EMNLP 2026",
+        proceedingsUrl: "",
+    },
+];
 
 // Projects
 export type ProjectDomain = "AI" | "Web" | "Game" | "App" | "Tool/Infrastructure" | "App/TUI";
