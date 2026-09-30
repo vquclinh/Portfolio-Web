@@ -1,4 +1,4 @@
-import { ExternalLink, Github, Bot, Gamepad2, Globe, Layers, Code2, Cpu, ArrowUpRight, AppWindow, Trophy, BookOpen, FileText } from "lucide-react";
+import { ExternalLink, Github, Bot, Gamepad2, Globe, Layers, Code2, Cpu, ArrowUpRight, AppWindow, Trophy, BookOpen, FileText, Presentation } from "lucide-react";
 import { useState, type ElementType } from "react";
 import { publications, projects, skills, type Publication, type Project, type ProjectDomain } from "../../../data/prj-work";
 import { ProjectModal, type ProjectModalItem } from "../components/ProjectModal";
@@ -55,6 +55,7 @@ function projectToModalItem(item: Project): ProjectModalItem {
 function PublicationPanel({ item }: { item: Publication }) {
   const paperUrl = item.paperUrl?.trim();
   const githubUrl = item.githubUrl?.trim();
+  const posterUrl = item.posterUrl?.trim();
   const proceedingsUrl = item.proceedingsUrl?.trim();
 
   return (
@@ -94,6 +95,17 @@ function PublicationPanel({ item }: { item: Publication }) {
             >
               <FileText className="h-3.5 w-3.5" />
               Paper PDF
+            </a>
+          )}
+          {posterUrl && (
+            <a
+              href={posterUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-md border border-zinc-700 bg-zinc-950 px-3 py-2 text-xs font-medium text-zinc-200 transition-colors hover:border-cyan-700 hover:text-cyan-200"
+            >
+              <Presentation className="h-3.5 w-3.5" />
+              Poster
             </a>
           )}
           {githubUrl && (

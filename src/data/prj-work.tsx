@@ -22,6 +22,7 @@ export type Publication = {
   venueTag?: string;
   paperUrl?: string;
   githubUrl?: string;
+  posterUrl?: string;
   proceedingsUrl?: string;
 };
 
@@ -33,6 +34,7 @@ export const publications: Publication[] = [
         authors: "Quoc-Linh Vo",
         venue: "AKBC Workshop @ EMNLP 2026",
         githubUrl: "https://github.com/vquclinh/cover-kbc",
+        posterUrl: "/papers/cover-kbc-poster.pdf",
         proceedingsUrl: "",
     },
 ];
