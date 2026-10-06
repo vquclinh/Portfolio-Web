@@ -20,18 +20,18 @@ export function ContactSection() {
               <p className="text-xs uppercase tracking-widest text-white mb-4">Direct</p>
               <div className="space-y-4">
                 <a
-                  href="mailto:voquoclinh.29042006@gmail.com"
+                  href="mailto:vqlinh.contact@gmail.com"
                   className="flex items-center gap-3 text-zinc-400 hover:text-white transition-colors group"
                 >
                   <Mail className="w-4 h-4 text-zinc-600 group-hover:text-white shrink-0 transition-colors" />
-                  <span className="text-sm">voquoclinh.29042006@gmail.com</span>
+                  <span className="text-sm">vqlinh.contact@gmail.com</span>
                 </a>
                 <a
                   href="tel:+84775502127"
                   className="flex items-center gap-3 text-zinc-400 hover:text-white transition-colors group"
                 >
                   <Phone className="w-4 h-4 text-zinc-600 group-hover:text-white shrink-0 transition-colors" />
-                  <span className="text-sm">(+84) 398 695 132</span>
+                  <span className="text-sm">(+84) 775 502 127</span>
                 </a>
                 <div className="flex items-center gap-3 text-zinc-400">
                   <MapPin className="w-4 h-4 text-zinc-600 shrink-0" />
