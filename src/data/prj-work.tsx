@@ -10,6 +10,7 @@ import pulselensImg from "../assets/prj-img/pulselens.png"
 import fastmcqImg from "../assets/prj-img/fastmcq.png"
 import codeCupImg from "../assets/prj-img/codecup.png"
 import mednormImg from "../assets/prj-img/mednorm.png"
+import aic2026Img from "../assets/prj-img/aic2026.png"
 
 // Publications
 export type Publication = {
@@ -77,7 +78,7 @@ export const projects: Project[] = [
         tags: ["AI", "Computer Vision", "Competition"],
         demo: "",
         github: "",
-        image: "",
+        image: aic2026Img,
         poster: "/AIC2026_poster.pdf",
     },
     {
