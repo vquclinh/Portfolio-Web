@@ -1,4 +1,4 @@
-import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
+import { ExternalLink, Github, ArrowUpRight, FileText } from "lucide-react";
 import type { ElementType } from "react";
 
 import {
@@ -23,6 +23,7 @@ export type ProjectModalItem = {
   demo?: string;
   github?: string;
   paper?: string;
+  poster?: string;
 };
 
 type ProjectModalProps = {
@@ -55,6 +56,7 @@ export function ProjectModal({ item, onClose }: ProjectModalProps) {
         { href: item.demo ?? "", label: "Demo", icon: ExternalLink },
         { href: item.github ?? "", label: "Code", icon: Github },
         { href: item.paper ?? "", label: "Paper", icon: ArrowUpRight },
+        { href: item.poster ?? "", label: "Poster", icon: FileText },
       ].filter((link) => link.href.trim() !== "")
     : [];
 

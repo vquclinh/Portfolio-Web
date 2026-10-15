@@ -48,6 +48,7 @@ function projectToModalItem(item: Project): ProjectModalItem {
     demo: item.demo,
     github: item.github,
     paper: item.paper,
+    poster: item.poster,
   };
 }
 

@@ -61,10 +61,25 @@ export type Project = {
   github: string;
   image: string;
   paper?: string;
+    poster?: string;
   competition?: Competition;
 };
 
 export const projects: Project[] = [
+    {
+        id: "p10",
+        title: "AI City Challenge Ho Chi Minh City 2026",
+        date: "2026",
+        domain: "AI",
+        section: "featured",
+        description:
+            "Participation in the AI City Challenge Ho Chi Minh City 2026. Project details and technical materials are intentionally not public; the event poster is available below.",
+        tags: ["AI", "Computer Vision", "Competition"],
+        demo: "",
+        github: "",
+        image: "",
+        poster: "/AIC2026_poster.pdf",
+    },
     {
         id: "p11",
         title: "FastMCQ Agent",
