@@ -238,7 +238,11 @@ function ProjectCard({ item, onSelect }: { item: Project; onSelect: (modalItem: 
               <ExternalLink className="w-3 h-3" /> Demo
             </a>
           )}
-          {item.github && (
+          {item.poster ? (
+            <a href={item.poster} target="_blank" rel="noreferrer" onClick={stop} className="flex items-center gap-1 text-xs text-zinc-400 hover:text-emerald-300 transition-colors">
+              <FileText className="w-3 h-3" /> Poster
+            </a>
+          ) : item.github && (
             <a href={item.github} target="_blank" rel="noreferrer" onClick={stop} className="flex items-center gap-1 text-xs text-zinc-400 hover:text-emerald-300 transition-colors">
               <Github className="w-3 h-3" /> Code
             </a>
