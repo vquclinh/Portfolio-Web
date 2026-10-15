@@ -79,6 +79,11 @@ export const projects: Project[] = [
         demo: "",
         github: "",
         image: aic2026Img,
+        competition: {
+            name: "AI Challenge 2026",
+            subtitle: "Table A",
+            short: "HackAIthon 2026",
+        },
         poster: "/AIC2026_poster.pdf",
     },
     {
