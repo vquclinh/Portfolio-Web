@@ -55,6 +55,7 @@ function projectToModalItem(item: Project): ProjectModalItem {
 // Publication Panel
 function PublicationPanel({ item }: { item: Publication }) {
   const paperUrl = item.paperUrl?.trim();
+  const pdfUrl = item.pdfUrl?.trim();
   const githubUrl = item.githubUrl?.trim();
   const posterUrl = item.posterUrl?.trim();
   const proceedingsUrl = item.proceedingsUrl?.trim();
@@ -129,6 +130,16 @@ function PublicationPanel({ item }: { item: Publication }) {
             >
               <ArrowUpRight className="h-3.5 w-3.5" />
               Proceedings
+            </a>
+          ) : pdfUrl ? (
+            <a
+              href={pdfUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-md border border-zinc-700 bg-zinc-950 px-3 py-2 text-xs font-medium text-zinc-200 transition-colors hover:border-cyan-700 hover:text-cyan-200"
+            >
+              <FileText className="h-3.5 w-3.5" />
+              PDF
             </a>
           ) : (
             <button
