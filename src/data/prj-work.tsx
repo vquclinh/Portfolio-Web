@@ -39,6 +39,14 @@ export const publications: Publication[] = [
         pdfUrl: "/papers/AKBC_2026.pdf",
         proceedingsUrl: "",
     },
+    {
+        id: "cad-vr",
+        title: "CAD VR: Guarded Evidence Control for Fast and Slow Agentic Video Retrieval",
+        date: "2026",
+        authors: "Quoc-Linh Vo",
+        venue: "Research preprint",
+        pdfUrl: "/papers/CAD_VR.pdf",
+    },
 ];
 
 // Projects

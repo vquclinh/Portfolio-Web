@@ -59,6 +59,7 @@ function PublicationPanel({ item }: { item: Publication }) {
   const githubUrl = item.githubUrl?.trim();
   const posterUrl = item.posterUrl?.trim();
   const proceedingsUrl = item.proceedingsUrl?.trim();
+  const authorParts = item.authors.split(/(Quoc-Linh Vo)/g);
 
   return (
     <article className="rounded-lg border border-zinc-800 bg-zinc-900/80 p-4 sm:p-5">
@@ -75,7 +76,11 @@ function PublicationPanel({ item }: { item: Publication }) {
           <h3 className="text-base font-semibold leading-snug text-cyan-200 sm:text-lg">
             {item.title}
           </h3>
-          <p className="mt-1.5 text-sm text-zinc-100">{item.authors}</p>
+          <p className="mt-1.5 text-sm text-zinc-100">
+            {authorParts.map((part, index) =>
+              part === "Quoc-Linh Vo" ? <em key={index}>{part}</em> : part
+            )}
+          </p>
 
           <div className="mt-2 flex flex-wrap items-center gap-2">
             <span className="text-sm text-zinc-300">{item.venue}</span>
