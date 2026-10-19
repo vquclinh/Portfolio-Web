@@ -43,8 +43,8 @@ export const publications: Publication[] = [
         id: "cad-vr",
         title: "CAD VR: Guarded Evidence Control for Fast and Slow Agentic Video Retrieval",
         date: "2026",
-        authors: "Quoc-Linh Vo",
-        venue: "Research preprint",
+        authors: "Huy-Hoang Pham-Le, Nhat-Bao Vo, Dong-Quan Ngo-Nguyen, Quoc-Linh Vo, Le-Bao Nguyen-Van",
+        venue: "SoICT 2026",
         pdfUrl: "/papers/CAD_VR.pdf",
     },
 ];
@@ -79,12 +79,12 @@ export type Project = {
 export const projects: Project[] = [
     {
         id: "p10",
-        title: "AI City Challenge Ho Chi Minh City 2026",
+        title: "AIC26-Retrieval",
         date: "2026",
         domain: "AI",
         section: "featured",
         description:
-            "Participation in the AI City Challenge Ho Chi Minh City 2026. Project details and technical materials are intentionally not public; the event poster is available below.",
+            "Participation in the AI Challenge Ho Chi Minh 2026. Project details and technical materials are intentionally not public; the event poster is available below.",
         tags: ["AI", "Computer Vision", "Competition"],
         demo: "",
         github: "",

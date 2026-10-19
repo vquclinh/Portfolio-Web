@@ -1,4 +1,4 @@
-import { ExternalLink, Github, Bot, Gamepad2, Globe, Layers, Code2, Cpu, ArrowUpRight, AppWindow, Trophy, BookOpen, FileText, Presentation } from "lucide-react";
+import { ExternalLink, Github, Bot, Gamepad2, Globe, Layers, Code2, Cpu, ArrowUpRight, AppWindow, Trophy, BookOpen, FileText } from "lucide-react";
 import { useState, type ElementType } from "react";
 import { publications, projects, skills, type Publication, type Project, type ProjectDomain } from "../../../data/prj-work";
 import { ProjectModal, type ProjectModalItem } from "../components/ProjectModal";
@@ -82,81 +82,42 @@ function PublicationPanel({ item }: { item: Publication }) {
             )}
           </p>
 
-          <div className="mt-2 flex flex-wrap items-center gap-2">
-            <span className="text-sm text-zinc-300">{item.venue}</span>
-            {item.venueTag && (
-              <span className="rounded border border-amber-700/40 bg-amber-950/25 px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.14em] text-amber-200">
-                {item.venueTag}
-              </span>
-            )}
+          <div className="mt-2 flex flex-wrap items-center justify-between gap-2">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-sm text-zinc-300">{item.venue}</span>
+              {item.venueTag && (
+                <span className="rounded border border-amber-700/40 bg-amber-950/25 px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.14em] text-amber-200">
+                  {item.venueTag}
+                </span>
+              )}
+            </div>
+            <div className="flex shrink-0 flex-wrap items-center justify-end gap-x-3 gap-y-1 text-sm">
+              {paperUrl && (
+                <a href={paperUrl} target="_blank" rel="noreferrer" className="text-cyan-400 underline decoration-cyan-700 underline-offset-2 transition-colors hover:text-cyan-200">
+                  paper
+                </a>
+              )}
+              {posterUrl && (
+                <a href={posterUrl} target="_blank" rel="noreferrer" className="text-cyan-400 underline decoration-cyan-700 underline-offset-2 transition-colors hover:text-cyan-200">
+                  poster
+                </a>
+              )}
+              {githubUrl && (
+                <a href={githubUrl} target="_blank" rel="noreferrer" className="text-cyan-400 underline decoration-cyan-700 underline-offset-2 transition-colors hover:text-cyan-200">
+                  code
+                </a>
+              )}
+              {proceedingsUrl ? (
+                <a href={proceedingsUrl} target="_blank" rel="noreferrer" className="text-cyan-400 underline decoration-cyan-700 underline-offset-2 transition-colors hover:text-cyan-200">
+                  proceedings
+                </a>
+              ) : pdfUrl ? (
+                <a href={pdfUrl} target="_blank" rel="noreferrer" className="text-cyan-400 underline decoration-cyan-700 underline-offset-2 transition-colors hover:text-cyan-200">
+                  pdf
+                </a>
+              ) : null}
+            </div>
           </div>
-        </div>
-
-        <div className="flex shrink-0 flex-wrap gap-2 md:w-36 md:flex-col">
-          {paperUrl && (
-            <a
-              href={paperUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-md border border-zinc-700 bg-zinc-950 px-3 py-2 text-xs font-medium text-zinc-200 transition-colors hover:border-cyan-700 hover:text-cyan-200"
-            >
-              <FileText className="h-3.5 w-3.5" />
-              Paper PDF
-            </a>
-          )}
-          {posterUrl && (
-            <a
-              href={posterUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-md border border-zinc-700 bg-zinc-950 px-3 py-2 text-xs font-medium text-zinc-200 transition-colors hover:border-cyan-700 hover:text-cyan-200"
-            >
-              <Presentation className="h-3.5 w-3.5" />
-              Poster
-            </a>
-          )}
-          {githubUrl && (
-            <a
-              href={githubUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-md border border-zinc-700 bg-zinc-950 px-3 py-2 text-xs font-medium text-zinc-200 transition-colors hover:border-cyan-700 hover:text-cyan-200"
-            >
-              <Github className="h-3.5 w-3.5" />
-              GitHub
-            </a>
-          )}
-          {proceedingsUrl ? (
-            <a
-              href={proceedingsUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-md border border-zinc-700 bg-zinc-950 px-3 py-2 text-xs font-medium text-zinc-200 transition-colors hover:border-cyan-700 hover:text-cyan-200"
-            >
-              <ArrowUpRight className="h-3.5 w-3.5" />
-              Proceedings
-            </a>
-          ) : pdfUrl ? (
-            <a
-              href={pdfUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-md border border-zinc-700 bg-zinc-950 px-3 py-2 text-xs font-medium text-zinc-200 transition-colors hover:border-cyan-700 hover:text-cyan-200"
-            >
-              <FileText className="h-3.5 w-3.5" />
-              PDF
-            </a>
-          ) : (
-            <button
-              type="button"
-              disabled
-              title="Link will be added once the paper appears in the proceedings."
-              className="inline-flex cursor-not-allowed items-center justify-center gap-2 rounded-md border border-zinc-800 bg-zinc-950/60 px-3 py-2 text-xs font-medium text-zinc-500"
-            >
-              <ArrowUpRight className="h-3.5 w-3.5" />
-              Proceedings
-            </button>
-          )}
         </div>
       </div>
     </article>
