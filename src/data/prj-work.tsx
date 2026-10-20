@@ -29,6 +29,14 @@ export type Publication = {
 
 export const publications: Publication[] = [
     {
+        id: "cluescope",
+        title: "ClueScope: Evidence-Centric Multimodal Video Retrieval for Interactive Search",
+        date: "2027",
+        authors: "Huy-Hoang Pham-Le, Nhat-Bao Vo, Dong-Quan Ngo-Nguyen, Quoc-Linh Vo, Le-Bao Nguyen-Van, Minh-Triet Tran",
+        venue: "MMM 2027 (Track VBS)",
+        proceedingsUrl: "",
+    },
+    {
         id: "cover-kbc",
         title: "COVER-KBC: Evidence-Centric Adaptive Inference for Closed-Book Knowledge Base Construction",
         date: "2026",
@@ -46,6 +54,7 @@ export const publications: Publication[] = [
         authors: "Huy-Hoang Pham-Le, Nhat-Bao Vo, Dong-Quan Ngo-Nguyen, Quoc-Linh Vo, Le-Bao Nguyen-Van",
         venue: "SoICT 2026",
         pdfUrl: "/papers/CAD_VR.pdf",
+        proceedingsUrl: "",
     },
 ];
 
