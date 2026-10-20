@@ -86,7 +86,7 @@ function PublicationPanel({ item }: { item: Publication }) {
             <div className="flex flex-wrap items-center gap-2">
               <span className="text-sm text-zinc-300">{item.venue}</span>
               {item.venueTag && (
-                <span className="rounded border border-amber-700/40 bg-amber-950/25 px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.14em] text-amber-200">
+                <span className="inline-flex items-center rounded-sm bg-[#4b4730] px-2 py-0.5 text-[11px] font-semibold text-amber-300">
                   {item.venueTag}
                 </span>
               )}
