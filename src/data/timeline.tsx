@@ -27,6 +27,11 @@ export const timelineEvents: TimelineEvent[] = [
     highlight: true,
   },
   {
+    id: "t15",
+    date: "12/10/2026",
+    description: "Submitted paper to ACL Rolling Review - October 2026",
+  },
+  {
     id: "t11",
     date: "01/09/2026",
     description: [
