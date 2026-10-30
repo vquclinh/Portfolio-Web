@@ -46,7 +46,7 @@ export const publications: Publication[] = [
         githubUrl: "https://github.com/vquclinh/cover-kbc",
         posterUrl: "/papers/cover-kbc-poster.pdf",
         pdfUrl: "/papers/AKBC_2026.pdf",
-        proceedingsUrl: "",
+        proceedingsUrl: "https://aclanthology.org/2026.akbc-1.37/",
     },
     {
         id: "cad-vr",
