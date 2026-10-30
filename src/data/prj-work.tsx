@@ -50,7 +50,7 @@ export const publications: Publication[] = [
     },
     {
         id: "cad-vr",
-        title: "CAD VR: Guarded Evidence Control for Fast and Slow Agentic Video Retrieval",
+        title: "EDGAR: Evidence-Driven Guarded Agentic Retrieval for Video Events",
         date: "2026",
         authors: "Huy-Hoang Pham-Le, Nhat-Bao Vo, Dong-Quan Ngo-Nguyen, Quoc-Linh Vo, Le-Bao Nguyen-Van",
         venue: "SoICT 2026",
