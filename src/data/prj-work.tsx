@@ -35,6 +35,7 @@ export const publications: Publication[] = [
         authors: "Huy-Hoang Pham-Le, Nhat-Bao Vo, Dong-Quan Ngo-Nguyen, Quoc-Linh Vo, Le-Bao Nguyen-Van, Minh-Triet Tran",
         venue: "MMM 2027 (Track VBS)",
         venueTag: "CORE B Conference",
+        pdfUrl: "/papers/ClueScope.pdf",
         proceedingsUrl: "",
     },
     {
