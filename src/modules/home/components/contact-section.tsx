@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Twitter, GraduationCap } from "lucide-react";
 import { SlideInOnScroll } from "@/shared/components/slideInOnScroll";
 
 export function ContactSection() {
@@ -72,6 +72,15 @@ export function ContactSection() {
                 >
                   <Twitter className="w-4 h-4 text-zinc-600 group-hover:text-white shrink-0 transition-colors" />
                   <span className="text-sm">Vo Quoc Linh</span>
+                </a>
+                <a
+                  href="https://scholar.google.com/citations?user=8K0flUkAAAAJ&hl=vi&oi=ao"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-zinc-400 hover:text-white transition-colors group"
+                >
+                  <GraduationCap className="w-4 h-4 text-zinc-600 group-hover:text-white shrink-0 transition-colors" />
+                  <span className="text-sm">Google Scholar</span>
                 </a>
               </div>
             </div>

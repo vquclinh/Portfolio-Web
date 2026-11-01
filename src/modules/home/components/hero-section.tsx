@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, GraduationCap } from "lucide-react";
 import { Button } from "@/shared/components/ui/button";
 import { ImageWithFallback } from "@/shared/components/ui/image-with-fallback";
 import avatar from "@/assets/avatar.jpg";
@@ -52,8 +52,20 @@ export function HeroSection() {
           </p>
         </SlideInOnScroll>
 
+        <SlideInOnScroll direction="up" duration={600} delay={300}>
+          <a
+            href="https://scholar.google.com/citations?user=8K0flUkAAAAJ&hl=vi&oi=ao"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mb-4 flex items-center gap-2 text-sm text-zinc-400 transition-colors hover:text-white"
+          >
+            <GraduationCap className="h-4 w-4" />
+            Google Scholar
+          </a>
+        </SlideInOnScroll>
+
         {/* Divider */}
-        <SlideInOnScroll direction="up" duration={600} delay={350}>
+        <SlideInOnScroll direction="up" duration={600} delay={400}>
           <div className="w-16 h-px bg-zinc-600 mb-4"></div>
         </SlideInOnScroll>
 

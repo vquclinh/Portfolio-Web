@@ -27,10 +27,14 @@ export function BioSection() {
           {/* Paragraph 2 */}
           <SlideInOnScroll direction="right" duration={700} delay={200}>
             <p>
-              I have a strong passion for Natural Language Processing, particularly
-              Discrete Diffusion Models in text generation, as well as Dichotomous Segmentation and UI/UX
-              design. I am always eager to explore new technologies and continuously
-              improve my skills in these areas.
+              My primary research interests lie in Natural Language Processing (NLP) and
+              Information Retrieval (IR). Alongside my academic research, I have a strong
+              passion for AI Engineering. I love the challenge of bridging the gap between
+              theoretical concepts and practical applications, focusing on building robust,
+              scalable AI systems. Ultimately, my goal is to develop real-world products
+              that solve practical problems and bring tangible value to people's daily lives,
+              whether for the broader public or specific communities. I am always eager to
+              explore new technologies and continuously improve my skills in these areas.
             </p>
           </SlideInOnScroll>
         </div>
