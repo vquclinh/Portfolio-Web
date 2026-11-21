@@ -8,6 +8,12 @@ export type TimelineEvent = {
 
 export const timelineEvents: TimelineEvent[] = [
   {
+    id: "t16",
+    date: "21/11/2026",
+    description: "Awarded the 2026 Special Power On Scholarship",
+    highlight: true,
+  },
+  {
     id: "t14",
     date: "20/10/2026",
     description: "Paper accepted for the 33rd International Conference on Multimedia Modeling 2027 (MMM 2027)",
