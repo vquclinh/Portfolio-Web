@@ -11,7 +11,6 @@ export const timelineEvents: TimelineEvent[] = [
     id: "t16",
     date: "21/11/2026",
     description: "Awarded the 2026 Special Power On Scholarship",
-    highlight: true,
   },
   {
     id: "t14",
@@ -72,7 +71,6 @@ export const timelineEvents: TimelineEvent[] = [
     date: "30/08/2024",
     description:
       "Awarded the 2024 Vallet Scholarship by Rencontres du Vietnam in recognition of outstanding academic and research excellence.",
-    highlight: true,
   },
   {
     id: "t5",
