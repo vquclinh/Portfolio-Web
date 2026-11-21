@@ -68,6 +68,13 @@ export const timelineEvents: TimelineEvent[] = [
     description: "Began studying Advanced Program in Computer Science at University of Science - VNU",
   },
   {
+    id: "t17",
+    date: "30/08/2024",
+    description:
+      "Awarded the 2024 Vallet Scholarship by Rencontres du Vietnam in recognition of outstanding academic and research excellence.",
+    highlight: true,
+  },
+  {
     id: "t5",
     date: "03/2024",
     description: "Third Prize — National Mathematics Gifted Student Competition",
