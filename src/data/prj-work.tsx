@@ -11,6 +11,7 @@ import fastmcqImg from "../assets/prj-img/fastmcq.png"
 import codeCupImg from "../assets/prj-img/codecup.png"
 import mednormImg from "../assets/prj-img/mednorm.png"
 import aic2026Img from "../assets/prj-img/aic2026.png"
+import tincoImg from "../assets/prj-img/tinco.png"
 
 // Publications
 export type Publication = {
@@ -61,7 +62,7 @@ export const publications: Publication[] = [
 ];
 
 // Projects
-export type ProjectDomain = "AI" | "Web" | "Game" | "App" | "Tool/Infrastructure" | "App/TUI";
+export type ProjectDomain = "AI" | "Web" | "Game" | "App" | "Tool/Infrastructure" | "App/TUI" | "Web3";
 export type ProjectSection = "featured" | "archive";
 
 export type Competition = {
@@ -141,6 +142,24 @@ export const projects: Project[] = [
             name: "Ontological Reasoning in Medical Knowledge Retrieval",
             subtitle: "Track 2",
             short: "Viettel AI Race 2026",
+        },
+    },
+    {
+        id: "p13",
+        title: "Tinco",
+        date: "2026",
+        domain: "Web3",
+        section: "featured",
+        description:
+            "Tinco is a neutral rental-deposit escrow for Vietnamese students, built on Avalanche for Team1 Vietnam UniHack 2026. Students moving to Ho Chi Minh City or Hanoi often lose deposits to fake room listings, or have them withheld at move-out with no proof and no one to rule on it. Tinco locks the deposit in a smart contract on Avalanche C-Chain instead of the landlord's pocket. Only the tenant can confirm move-in, so fake landlords never get paid and no-shows are refunded automatically. Move-in photos are fingerprinted on-chain. In a dispute, the undisputed share is refunded in the same transaction, and a mediator chosen by both sides can only split the rest, never keep it. To help the mediator decide, a vision model compares move-in and move-out photos in an AI damage report paid per use: 0.10 USDC over x402, settled on Avalanche. Students need no wallet and no AVAX: gas is sponsored through ERC-2771 meta-transactions with EIP-712 signatures, and a keeper resolves every missed deadline. Five verified contracts (escrow, forwarder, soulbound landlord badge, EIP-3009 test USDC and an ERC-4626 yield vault) run live on Avalanche Fuji behind a bilingual Next.js app with a judge demo and a live solvency page.",
+        tags: ["Solidity", "Avalanche", "Next.js", "TypeScript", "viem", "Hardhat", "x402", "ERC-2771", "OpenRouter", "Tailwind CSS"],
+        demo: "https://youtu.be/a-UfakoDMwY",
+        github: "https://github.com/vquclinh/tinco-deposit-escrow",
+        image: tincoImg,
+        competition: {
+            name: "Team1 Vietnam UniHack 2026",
+            subtitle: "Avalanche",
+            short: "UniHack 2026",
         },
     },
     {
