@@ -1,4 +1,4 @@
-import { ExternalLink, Github, Bot, Gamepad2, Globe, Layers, Code2, Cpu, ArrowUpRight, AppWindow, Trophy, BookOpen, FileText } from "lucide-react";
+import { ExternalLink, Github, Bot, Gamepad2, Globe, Layers, Code2, Cpu, ArrowUpRight, AppWindow, Trophy, BookOpen, FileText, Blocks } from "lucide-react";
 import { useState, type ElementType } from "react";
 import { publications, projects, skills, type Publication, type Project, type ProjectDomain } from "../../../data/prj-work";
 import { ProjectModal, type ProjectModalItem } from "../components/ProjectModal";
@@ -15,6 +15,7 @@ const DOMAIN_CONFIG: Record<ProjectDomain, {
   App:                   { icon: AppWindow,  label: "App",   color: "text-rose-400  bg-rose-950/50   border-rose-800/50"   },
   "Tool/Infrastructure": { icon: Cpu,        label: "Infra", color: "text-violet-300 bg-violet-950/50 border-violet-800/50" },
   "App/TUI":             { icon: Code2,      label: "TUI",   color: "text-lime-300  bg-lime-950/50   border-lime-800/50"   },
+  Web3:                  { icon: Blocks,     label: "Web3",  color: "text-orange-300 bg-orange-950/50 border-orange-800/50" },
 };
 
 // Skill groups
