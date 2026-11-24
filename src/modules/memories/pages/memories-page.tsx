@@ -14,28 +14,22 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 function MemoryGrid({ items }: { items: typeof memories }) {
   if (items.length === 0) return null;
   return (
-    <div className="columns-2 md:columns-3 gap-3 space-y-3">
-      {items.map((memory, i) => {
-        const isTall = i % 5 === 0 || i % 5 === 3;
-        const isWide = i % 7 === 1;
-        return (
-          <div
-            key={memory.id}
-            className={`
-              overflow-hidden rounded-xl break-inside-avoid bg-zinc-800 cursor-pointer
-              ${isTall ? "h-80" : isWide ? "h-48" : "h-60"}
-            `}
-          >
-            {memory.image && (
-              <img
-                src={memory.image}
-                alt={memory.id}
-                className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-              />
-            )}
-          </div>
-        );
-      })}
+    <div className="columns-2 md:columns-3 gap-3">
+      {items.map((memory, i) => (
+        <div
+          key={`${memory.id}-${i}`}
+          className="mb-3 overflow-hidden rounded-xl break-inside-avoid bg-zinc-800 cursor-pointer"
+        >
+          {memory.image && (
+            <img
+              src={memory.image}
+              alt={memory.category}
+              loading="lazy"
+              className="block w-full h-auto transition-transform duration-500 hover:scale-110"
+            />
+          )}
+        </div>
+      ))}
     </div>
   );
 }
