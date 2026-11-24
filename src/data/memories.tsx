@@ -32,7 +32,12 @@ import hackaithon4 from "../assets/memories/hackaithon/hackaithon4.jpg"
 import hackaithon5 from "../assets/memories/hackaithon/hackaithon5.jpg"
 import hackaithon6 from "../assets/memories/hackaithon/hackaithon6.jpg"
 
-export type MemoryCategory = "Scholarship" | "Math Team" | "University" | "12T1 - Le Khiet High School for The Gifted" | "Life" | "Vietnamese Student HackAIthon";
+import aic1 from "../assets/memories/aichallenge/aic1.jpg"
+import aic2 from "../assets/memories/aichallenge/aic2.jpg"
+import aic3 from "../assets/memories/aichallenge/aic3.jpg"
+import aic4 from "../assets/memories/aichallenge/aic4.jpg"
+
+export type MemoryCategory = "Scholarship" | "Math Team" | "University" | "12T1 - Le Khiet High School for The Gifted" | "Life" | "Vietnamese Student HackAIthon" | "AI Challenge HCMC 2026";
 
 export type Memory = {
   id: string;
@@ -75,5 +80,10 @@ export const memories: Memory[] = [
   { id: "h4", date: "2026", category: "Vietnamese Student HackAIthon", image: hackaithon4 },
   { id: "h5", date: "2026", category: "Vietnamese Student HackAIthon", image: hackaithon5 },
   { id: "h6", date: "2026", category: "Vietnamese Student HackAIthon", image: hackaithon6 },
+
+  { id: "aic1", date: "2026", category: "AI Challenge HCMC 2026", image: aic1 },
+  { id: "aic2", date: "2026", category: "AI Challenge HCMC 2026", image: aic2 },
+  { id: "aic3", date: "2026", category: "AI Challenge HCMC 2026", image: aic3 },
+  { id: "aic4", date: "2026", category: "AI Challenge HCMC 2026", image: aic4 },
 
 ];

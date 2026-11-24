@@ -1,6 +1,6 @@
 import { memories, type MemoryCategory } from "../../../data/memories";
 
-const CATEGORIES: MemoryCategory[] = ["Scholarship", "Math Team", "University", "12T1 - Le Khiet High School for The Gifted", "Life", "Vietnamese Student HackAIthon"];
+const CATEGORIES: MemoryCategory[] = ["Scholarship", "Math Team", "University", "12T1 - Le Khiet High School for The Gifted", "Life", "Vietnamese Student HackAIthon", "AI Challenge HCMC 2026"];
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
