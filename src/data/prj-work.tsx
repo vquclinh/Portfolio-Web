@@ -56,6 +56,7 @@ export const publications: Publication[] = [
         date: "2026",
         authors: "Huy-Hoang Pham-Le, Nhat-Bao Vo, Dong-Quan Ngo-Nguyen, Quoc-Linh Vo, Le-Bao Nguyen-Van",
         venue: "SoICT 2026",
+        posterUrl: "/papers/edgar-poster.pdf",
         pdfUrl: "/papers/CAD_VR.pdf",
         proceedingsUrl: "",
     },
