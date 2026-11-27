@@ -34,7 +34,7 @@ function MemoryImage({ memory, eager }: { memory: Memory; eager: boolean }) {
         if (img?.complete) setLoaded(true);
       }}
       onLoad={() => setLoaded(true)}
-      className={`block w-full h-auto transition-[opacity,transform] duration-500 hover:scale-110 ${
+      className={`block w-full h-auto transition-[opacity,scale] duration-500 ease-out hover:scale-110 ${
         loaded ? "opacity-100" : "opacity-0"
       }`}
     />
