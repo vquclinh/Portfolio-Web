@@ -1,4 +1,5 @@
-import { memories, type MemoryCategory } from "../../../data/memories";
+import { useState } from "react";
+import { memories, type Memory, type MemoryCategory } from "../../../data/memories";
 
 const CATEGORIES: MemoryCategory[] = [
   "Vietnamese Student HackAIthon",
@@ -19,7 +20,28 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   );
 }
 
-function MemoryGrid({ items }: { items: typeof memories }) {
+function MemoryImage({ memory, eager }: { memory: Memory; eager: boolean }) {
+  const [loaded, setLoaded] = useState(false);
+  return (
+    <img
+      src={memory.image}
+      alt={memory.category}
+      width={memory.width}
+      height={memory.height}
+      loading={eager ? "eager" : "lazy"}
+      decoding="async"
+      ref={(img) => {
+        if (img?.complete) setLoaded(true);
+      }}
+      onLoad={() => setLoaded(true)}
+      className={`block w-full h-auto transition-[opacity,transform] duration-500 hover:scale-110 ${
+        loaded ? "opacity-100" : "opacity-0"
+      }`}
+    />
+  );
+}
+
+function MemoryGrid({ items, eager }: { items: Memory[]; eager: boolean }) {
   if (items.length === 0) return null;
   return (
     <div className="columns-2 md:columns-3 gap-3">
@@ -28,14 +50,7 @@ function MemoryGrid({ items }: { items: typeof memories }) {
           key={`${memory.id}-${i}`}
           className="mb-3 overflow-hidden rounded-xl break-inside-avoid bg-zinc-800 cursor-pointer"
         >
-          {memory.image && (
-            <img
-              src={memory.image}
-              alt={memory.category}
-              loading="lazy"
-              className="block w-full h-auto transition-transform duration-500 hover:scale-110"
-            />
-          )}
+          <MemoryImage memory={memory} eager={eager} />
         </div>
       ))}
     </div>
@@ -55,13 +70,12 @@ export function MemoriesPage() {
           <div className="mt-4 h-px w-16 bg-gradient-to-r from-zinc-400 to-transparent" />
         </div>
 
-        {CATEGORIES.map((cat) => {
+        {CATEGORIES.filter((cat) => memories.some((m) => m.category === cat)).map((cat, index) => {
           const items = memories.filter((m) => m.category === cat);
-          if (items.length === 0) return null;
           return (
             <section key={cat}>
               <SectionLabel>{cat}</SectionLabel>
-              <MemoryGrid items={items} />
+              <MemoryGrid items={items} eager={index === 0} />
             </section>
           );
         })}
